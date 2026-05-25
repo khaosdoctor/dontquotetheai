@@ -26,9 +26,9 @@
         const opt = document.createElement("option");
         opt.value = file;
         opt.textContent = label;
-        if (file === here) opt.selected = true;
         select.appendChild(opt);
       });
+      select.value = here;
 
       select.addEventListener("change", (e) => {
         const v = e.target.value;
