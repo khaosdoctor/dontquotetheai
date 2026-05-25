@@ -13,19 +13,19 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dontquotetheai.com/ru.html">
-    <link rel="canonical" href="https://dontquotetheai.com/ru.html">
+    <meta property="og:url" content="https://dontquotetheai.com/angry/ru.html">
+    <link rel="canonical" href="https://dontquotetheai.com/angry/ru.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://dontquotetheai.com/assets/og-image-ru.png">
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Special+Elite&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="alternate" hreflang="en" href="https://dontquotetheai.com/angry/">
     <link rel="alternate" hreflang="pt-BR" href="https://dontquotetheai.com/angry/ptbr.html">
     <link rel="alternate" hreflang="ru" href="https://dontquotetheai.com/angry/ru.html">
@@ -41,7 +41,7 @@
                 <span>Если вы хотите получить текст на вашем родном языке:</span>
                 <label class="lang" aria-label="Language">
                     <select onchange="if(this.value)location.href=this.value">
-                        <option value="" selected>EN — English</option>
+                        <option value="index.html">EN — English</option>
                         <option value="ptbr.html">PT — Português (BR)</option>
                         <option value="ru.html" selected>RU — Русский</option>
                         <option value="zhtw.html">ZH — 繁體中文 (台灣)</option>
@@ -170,11 +170,17 @@
             <p>В следующий раз, когда кто-то ответит в твои личные сообщения, в Slack, на код-ревью — куда угодно —
                 прекрасным
                 массивом нередактированного текста из LLM, отправь им это:</p>
-            <p class="u-center u-mt-lg"><button type="button" class="url-tag-big" onclick="copyTag(this)"
+            <p class="u-center u-mt-lg"><button id="copyBtn" type="button" class="url-tag-big" onclick="copyTag(this)"
                     aria-label="Скопировать dontquotetheai.com в буфер обмена">dontquotetheai.com</button></p>
             <p class="u-center u-small u-muted u-mt-md">Нажми, чтобы скопировать. Никаких объяснений не нужно — они
                 поймут.
             </p>
+        </section>
+
+        <section>
+            <h2>Слишком жёстко?</h2>
+            <p>Справедливо. Если хочешь отправить более мягкую версию — вот она:</p>
+            <p class="u-center u-mt-lg"><a class="cta-calm" href="../ru.html">← Вернуться к вежливой версии</a></p>
         </section>
 
         <div class="signature">
@@ -197,6 +203,13 @@
 
     </main>
     <script>
+        (function setCopyDomain() {
+            const target = location.hostname.replace(/^www\./, '');
+            const btn = document.getElementById('copyBtn');
+            btn.textContent = target;
+            btn.dataset.copy = target;
+            btn.setAttribute('aria-label', `Скопировать ${target} в буфер обмена`);
+        })();
         function copyTag(el) {
             const text = el.dataset.copy || el.textContent.trim();
             if (!el.dataset.copy) el.dataset.copy = text;
