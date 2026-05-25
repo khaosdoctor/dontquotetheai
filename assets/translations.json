@@ -29,6 +29,12 @@
       "hreflang": "zh-CN",
       "label": "ZH — 简体中文",
       "file": "zh-cn.html"
+    },
+    {
+      "code": "it",
+      "hreflang": "it",
+      "label": "IT — Italiano",
+      "file": "it.html"
     }
   ]
 }
