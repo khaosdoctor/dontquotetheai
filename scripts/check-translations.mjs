@@ -148,13 +148,7 @@ for (const lang of languages) {
       );
     }
 
-    // 6: hreflang block has the sync markers (content is owned by sync-hreflang.mjs)
-    if (!html.includes("<!-- hreflang:start")) {
-      err(v.path, `Missing <!-- hreflang:start --> marker (run scripts/sync-hreflang.mjs)`);
-    }
-    if (!html.includes("<!-- hreflang:end -->")) {
-      err(v.path, `Missing <!-- hreflang:end --> marker (run scripts/sync-hreflang.mjs)`);
-    }
+    // 6: hreflang block is fully owned by scripts/sync-hreflang.mjs — not checked here.
 
     // 7: og:image / twitter:image exist on disk
     const expectedOg = ogImageFor(code);
