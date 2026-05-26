@@ -17,11 +17,14 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 | Language | Smooth | Angry | OG image | Maintainer |
 |----------|--------|-------|----------|-----------|
 | English (`en`) | ✅ [index.html](index.html) | ✅ [angry/](angry/) | ✅ | — |
+| Українська (`uk`) | ✅ [uk.html](uk.html) | ✅ [angry/uk.html](angry/uk.html) | ✅ | [@webknjaz] |
 | Português (BR) (`pt-br`) | ✅ [pt-br.html](pt-br.html) | ✅ [angry/pt-br.html](angry/pt-br.html) | ✅ | — |
 | Русский (`ru`) | ✅ [ru.html](ru.html) | ✅ [angry/ru.html](angry/ru.html) | ✅ | — |
 | 繁體中文 (`zh-tw`) | ✅ [zh-tw.html](zh-tw.html) | ✅ [angry/zh-tw.html](angry/zh-tw.html) | ✅ | — |
 | 简体中文 (`zh-cn`) | ✅ [zh-cn.html](zh-cn.html) | ✅ [angry/zh-cn.html](angry/zh-cn.html) | ✅ | — |
 | Italiano (`it`) | ✅ [it.html](it.html) | ✅ [angry/it.html](angry/it.html) | ✅ | — |
+
+[@webknjaz]: https://github.com/sponsors/webknjaz
 
 Want to suggest a language? Open an issue or just send the PR — even a half-finished one. We can iterate.
 
