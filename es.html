@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No le copies a la IA.</title>
+  <meta name="description" content="Si alguien te pregunta, quiere tu respuesta - no la de un bot.">
+  <meta property="og:title" content="No le copies a la IA.">
+  <meta property="og:description" content="Si alguien te pregunta, quiere tu respuesta - no la de un bot.">
+  <meta property="og:image" content="https://dontpastetheai.com/assets/og-image-es.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dontpastetheai.com/es.html">
+  <link rel="canonical" href="https://dontpastetheai.com/es.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dontpastetheai.com/assets/og-image-es.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=JetBrains+Mono:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- hreflang:start (managed by scripts/sync-hreflang.mjs — do not edit by hand) -->
+  <link rel="alternate" hreflang="en" href="https://dontpastetheai.com/">
+  <link rel="alternate" hreflang="pt-BR" href="https://dontpastetheai.com/pt-br.html">
+  <link rel="alternate" hreflang="ru" href="https://dontpastetheai.com/ru.html">
+  <link rel="alternate" hreflang="zh-TW" href="https://dontpastetheai.com/zh-tw.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://dontpastetheai.com/zh-cn.html">
+  <link rel="alternate" hreflang="it" href="https://dontpastetheai.com/it.html">
+  <link rel="alternate" hreflang="x-default" href="https://dontpastetheai.com/">
+  <!-- hreflang:end -->
+  <script src="assets/translations.js" defer></script>
+  <script src="assets/copy.js" defer></script>
+</head>
+
+<body>
+  <main class="sheet">
+
+    <header>
+      <div class="doc-meta">
+        <span>Disponible en otros idiomas:</span>
+        <label class="lang" aria-label="Language">
+          <select data-lang-select><option>ES — Español</option></select>
+        </label>
+      </div>
+      <h1>No le copies<br>a la <span class="yell">IA</span>, por favor.</h1>
+      <p class="lede">Si alguien te hace una pregunta, quiere <em>tu</em> respuesta.
+        No busca un <span class="marker">párrafo desde la IA sin editar</span>. Una respuesta breve es mucho mejor.</p>
+    </header>
+
+    <section>
+      <h2>¿Por qué existe este sitio?</h2>
+      <p>Alguien te envió una pregunta real. Entraste a un chat de IA, copiaste la respuesta que te dio, y la enviaste de vuelta. Pareciera ser de utilidad. Pero suele no ocurrir.</p>
+      <p>La persona al otro lado <strong>también tiene acceso a un chat de IA</strong>. Podría haber obtenido una respuesta en menos tiempo. Te preguntaron porque quieren <em>tu opinión</em>. Quieren considerar tu contexto, tu preferencia, tu juicio.</p>
+
+      <p>Ya hay suficientes personas que no buscan leer o pensar. No seas una más.</p>
+    </section>
+
+    <section>
+      <h2>Tus opciones:</h2>
+      <ol>
+        <li>Usa la IA. Sí, en serio: te puede ayudar a preparar una respuesta. Lo que sí, <strong>lee la respuesta que te entregó</strong>,
+          y luego escribe tu propia opinión. Puedes ser más que el que copia y pega una respuesta.</li>
+        <li>Considera sólo el fragmento que responda de verdad a la pregunta. Borra el resto. Tres frases son suficientes.</li>
+        <li>Si una parte de la respuesta del chatbot es realmente útil, pégala pero <em>agrega el porqué</em>. Basta con <span class="marker"><em>"Revisé con un chatbot, y esto me parece útil:"</em></span>.
+        </li>
+        <li>Si no tienes puntos que agregar, no hay problema en que lo digas. Responder <span class="marker"><em>"No tengo mucho que opinar"</em></span> es suficiente. Y es tu respuesta.
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>¿Quieres enviarle este sitio a alguien?</h2>
+      <p>Si alguien ya te envió un párrafo enorme en un mensaje, <abbr title="Pull Request">PR</abbr> o correo, envíale este link. No tienes que explicarle más detalles.</p>
+      <p class="u-center u-mt-lg"><button id="copyBtn" type="button" class="url-tag-big"
+          data-copy-aria="Copiar {domain}" data-copied-text="listo!">dontpastetheai.com</button></p>
+      <p class="u-center u-small u-muted u-mt-md">Haz click para copiar. Van a entender el mensaje.</p>
+    </section>
+
+    <section>
+      <h2>¿Quieres una versión más enérgica?</h2>
+      <p>Si prefieres enviarle a alguien una versión de este sitio <em>menos amable</em>, también está disponible.</p>
+      <p class="u-center u-mt-lg"><a class="cta-angry" data-variant-toggle href="angry/">Ir a la versión ruda →</a></p>
+      <p class="u-center u-small u-muted u-mt-md">No apta para enviarla en el trabajo. O tal vez sí.</p>
+    </section>
+
+    <div class="signature">
+      <div class="name">— cordialmente,<br>todos quienes te hablan</div>
+      <small>primo de <a href="https://nohello.net" target="_blank" rel="noopener">nohello.net</a> &amp;
+        <a href="https://dontasktoask.com" target="_blank" rel="noopener">dontasktoask.com</a>.<br>escrito por un humano, de forma sincera.</small>
+    </div>
+
+    <div class="footer">
+      <p><em>Si alguien te envió este sitio, no te enojes. Léelo, respira hondo y escribe tú la próxima respuesta.</em></p>
+      <p>Sátira, en su gran mayoría. Comparte y traduce — <a href="https://github.com/khaosdoctor/dontquotetheai"
+          target="_blank" rel="noopener">Aceptamos <abbr title="Pull Requests">PRs</abbr> en GitHub</a>.</p>
+    </div>
+
+  </main>
+</body>
+
+</html>
