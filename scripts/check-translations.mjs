@@ -42,6 +42,25 @@ function ogImageFor(code) {
     : `assets/og-image-${code}.png`;
 }
 
+// The SVG is the source of truth; CI renders the PNG on merge (sync.yml).
+// So a missing PNG is only a hard error when its SVG source is also missing.
+function ogSvgFor(code) {
+  return code === "en"
+    ? "assets/og-image.svg"
+    : `assets/og-image-${code}.svg`;
+}
+function imageMissing(file, label, ref, code) {
+  const svgExists = existsSync(join(REPO_ROOT, ogSvgFor(code)));
+  if (svgExists) {
+    warn(
+      file,
+      `${label} references missing PNG ${ref} (SVG source exists; CI renders it on merge)`
+    );
+  } else {
+    err(file, `${label} references missing file: ${ref}`);
+  }
+}
+
 // --- Load translations.json ---
 const translations = JSON.parse(read("assets/translations.json"));
 const languages = translations.languages;
@@ -162,7 +181,7 @@ for (const lang of languages) {
     } else {
       const ref = ogImage[1].replace(/^https?:\/\/[^/]+\//, "");
       if (!existsSync(join(REPO_ROOT, ref))) {
-        err(v.path, `og:image references missing file: ${ref}`);
+        imageMissing(v.path, "og:image", ref, code);
       }
       if (ref !== expectedOg && !ref.endsWith(expectedOg)) {
         warn(
@@ -182,7 +201,7 @@ for (const lang of languages) {
     } else {
       const ref = twImage[1].replace(/^https?:\/\/[^/]+\//, "");
       if (!existsSync(join(REPO_ROOT, ref))) {
-        err(v.path, `twitter:image references missing file: ${ref}`);
+        imageMissing(v.path, "twitter:image", ref, code);
       }
     }
 
