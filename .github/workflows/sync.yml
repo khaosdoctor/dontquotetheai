@@ -33,6 +33,8 @@ jobs:
           curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/special-elite@latest/latin-400-normal.ttf" -o ~/.local/share/fonts/special-elite.ttf
           curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-400-normal.ttf" -o ~/.local/share/fonts/jetbrains-mono-400.ttf
           curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-700-normal.ttf" -o ~/.local/share/fonts/jetbrains-mono-700.ttf
+          curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/pangolin@latest/latin-400-normal.ttf" -o ~/.local/share/fonts/pangolin-latin.ttf
+          curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/pangolin@latest/cyrillic-400-normal.ttf" -o ~/.local/share/fonts/pangolin-cyrillic.ttf
           curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/ma-shan-zheng@latest/chinese-simplified-400-normal.ttf" -o ~/.local/share/fonts/ma-shan-zheng.ttf || true
           curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/lxgw-wenkai-tc@latest/chinese-traditional-400-normal.ttf" -o ~/.local/share/fonts/lxgw-wenkai-tc.ttf || true
           curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-tc@latest/chinese-traditional-400-normal.ttf" -o ~/.local/share/fonts/noto-sans-tc.ttf || true

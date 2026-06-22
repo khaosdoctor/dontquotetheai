@@ -7,6 +7,12 @@
       "file": "index.html"
     },
     {
+      "code": "uk",
+      "hreflang": "uk",
+      "label": "UK — Українська",
+      "file": "uk.html"
+    },
+    {
       "code": "pt-br",
       "hreflang": "pt-BR",
       "label": "PT — Português (BR)",

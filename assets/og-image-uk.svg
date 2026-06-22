@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#ede2c4"/>
+
+  <ellipse cx="1020" cy="95" rx="400" ry="300" fill="#5a3214" opacity="0.08"/>
+  <ellipse cx="120" cy="565" rx="300" ry="200" fill="#5a3214" opacity="0.05"/>
+
+  <text x="600" y="230" text-anchor="middle" font-family="Pangolin" font-size="100" fill="#15120e">Йой, ти вставляєш</text>
+  <text x="600" y="340" text-anchor="middle" font-family="Pangolin" font-size="100" fill="#15120e"><tspan fill="#a82820">ШІ</tspan>, навіть не</text>
+  <text x="600" y="450" text-anchor="middle" font-family="Pangolin" font-size="100" fill="#15120e">прочитавши.</text>
+
+  <g transform="translate(740,540) rotate(-1)">
+    <rect x="4" y="4" width="380" height="60" fill="#15120e"/>
+    <rect x="0" y="0" width="380" height="60" fill="#f5d547" stroke="#15120e" stroke-width="3"/>
+    <text x="190" y="44" text-anchor="middle" font-family="Pangolin" font-size="32" fill="#15120e">dontpastetheai.com</text>
+  </g>
+</svg>
