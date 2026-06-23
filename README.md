@@ -16,17 +16,37 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 
 | Language | Smooth | Angry | OG image | Maintainer |
 |----------|--------|-------|----------|-----------|
-| English (`en`) | ✅ [index.html](index.html) | ✅ [angry/](angry/) | ✅ | — |
+| English (`en`) | ✅ [index.html](index.html) | ✅ [angry/](angry/) | ✅ | native |
 | Українська (`uk`) | ✅ [uk.html](uk.html) | ✅ [angry/uk.html](angry/uk.html) | ✅ | [@webknjaz] |
-| Português (BR) (`pt-br`) | ✅ [pt-br.html](pt-br.html) | ✅ [angry/pt-br.html](angry/pt-br.html) | ✅ | — |
-| Русский (`ru`) | ✅ [ru.html](ru.html) | ✅ [angry/ru.html](angry/ru.html) | ✅ | — |
-| 繁體中文 (`zh-tw`) | ✅ [zh-tw.html](zh-tw.html) | ✅ [angry/zh-tw.html](angry/zh-tw.html) | ✅ | — |
-| 简体中文 (`zh-cn`) | ✅ [zh-cn.html](zh-cn.html) | ✅ [angry/zh-cn.html](angry/zh-cn.html) | ✅ | — |
-| Italiano (`it`) | ✅ [it.html](it.html) | ✅ [angry/it.html](angry/it.html) | ✅ | — |
+| Português (BR) (`pt-br`) | ✅ [pt-br.html](pt-br.html) | ✅ [angry/pt-br.html](angry/pt-br.html) | ✅ | native |
+| Русский (`ru`) | ✅ [ru.html](ru.html) | ✅ [angry/ru.html](angry/ru.html) | ✅ | [@alexeev-prog] |
+| 繁體中文 (`zh-tw`) | ✅ [zh-tw.html](zh-tw.html) | ✅ [angry/zh-tw.html](angry/zh-tw.html) | ✅ | [@cgjosephlee] |
+| 简体中文 (`zh-cn`) | ✅ [zh-cn.html](zh-cn.html) | ✅ [angry/zh-cn.html](angry/zh-cn.html) | ✅ | [@ieuze] |
+| Italiano (`it`) | ✅ [it.html](it.html) | ✅ [angry/it.html](angry/it.html) | ✅ | [@meccin] |
+| Español (`es`) | ✅ [es.html](es.html) | ✅ [angry/es.html](angry/es.html) | ✅ | [@PotterSys] |
+| Français (`fr`) | ✅ [fr.html](fr.html) | ✅ [angry/fr.html](angry/fr.html) | ✅ | [@georgesnoe] |
 
 [@webknjaz]: https://github.com/sponsors/webknjaz
+[@alexeev-prog]: https://github.com/alexeev-prog
+[@cgjosephlee]: https://github.com/cgjosephlee
+[@ieuze]: https://github.com/ieuze
+[@meccin]: https://github.com/meccin
+[@PotterSys]: https://github.com/PotterSys
+[@georgesnoe]: https://github.com/georgesnoe
 
 Want to suggest a language? Open an issue or just send the PR — even a half-finished one. We can iterate.
+
+### Thanks to our translators
+
+These people took the time to make this page work in their language — huge thanks to all of them:
+
+- [@webknjaz] — Українська (Ukrainian)
+- [@alexeev-prog] — Русский (Russian)
+- [@cgjosephlee] — 繁體中文 (Traditional Chinese)
+- [@ieuze] — 简体中文 (Simplified Chinese)
+- [@meccin] — Italiano (Italian)
+- [@PotterSys] — Español (Spanish)
+- [@georgesnoe] — Français (French)
 
 ## Two versions
 
