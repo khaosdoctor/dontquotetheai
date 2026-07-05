@@ -53,6 +53,12 @@
       "hreflang": "fr",
       "label": "FR — Français",
       "file": "fr.html"
+    },
+    {
+      "code": "ja",
+      "hreflang": "ja",
+      "label": "JA — 日本語",
+      "file": "ja.html"
     }
   ]
 }
