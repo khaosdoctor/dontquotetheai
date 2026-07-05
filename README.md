@@ -25,6 +25,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 | Italiano (`it`) | ✅ [it.html](it.html) | ✅ [angry/it.html](angry/it.html) | ✅ | [@meccin] |
 | Español (`es`) | ✅ [es.html](es.html) | ✅ [angry/es.html](angry/es.html) | ✅ | [@PotterSys] |
 | Français (`fr`) | ✅ [fr.html](fr.html) | ✅ [angry/fr.html](angry/fr.html) | ✅ | [@georgesnoe] |
+| 日本語 (`ja`) | ✅ [ja.html](ja.html) | ✅ [angry/ja.html](angry/ja.html) | ✅ | [@KosukeKamiya] |
 
 [@webknjaz]: https://github.com/sponsors/webknjaz
 [@alexeev-prog]: https://github.com/alexeev-prog
@@ -33,6 +34,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 [@meccin]: https://github.com/meccin
 [@PotterSys]: https://github.com/PotterSys
 [@georgesnoe]: https://github.com/georgesnoe
+[@KosukeKamiya]: https://github.com/KosukeKamiya
 
 Want to suggest a language? Open an issue or just send the PR — even a half-finished one. We can iterate.
 
@@ -47,6 +49,7 @@ These people took the time to make this page work in their language — huge tha
 - [@meccin] — Italiano (Italian)
 - [@PotterSys] — Español (Spanish)
 - [@georgesnoe] — Français (French)
+- [@KosukeKamiya] — 日本語 (Japanese)
 
 ## Two versions
 
