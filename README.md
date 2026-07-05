@@ -36,20 +36,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 [@georgesnoe]: https://github.com/georgesnoe
 [@KosukeKamiya]: https://github.com/KosukeKamiya
 
-Want to suggest a language? Open an issue or just send the PR — even a half-finished one. We can iterate.
-
-### Thanks to our translators
-
-These people took the time to make this page work in their language — huge thanks to all of them:
-
-- [@webknjaz] — Українська (Ukrainian)
-- [@alexeev-prog] — Русский (Russian)
-- [@cgjosephlee] — 繁體中文 (Traditional Chinese)
-- [@ieuze] — 简体中文 (Simplified Chinese)
-- [@meccin] — Italiano (Italian)
-- [@PotterSys] — Español (Spanish)
-- [@georgesnoe] — Français (French)
-- [@KosukeKamiya] — 日本語 (Japanese)
+Want to suggest a language? Open an issue or just send the PR — even a half-finished one. We can iterate. Huge thanks to everyone in the Maintainer column above who took the time to make this page work in their language.
 
 ## Two versions
 
