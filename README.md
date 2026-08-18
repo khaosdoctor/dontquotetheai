@@ -26,6 +26,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 | Español (`es`) | ✅ [es.html](es.html) | ✅ [angry/es.html](angry/es.html) | ✅ | [@PotterSys] |
 | Français (`fr`) | ✅ [fr.html](fr.html) | ✅ [angry/fr.html](angry/fr.html) | ✅ | [@georgesnoe] |
 | 日本語 (`ja`) | ✅ [ja.html](ja.html) | ✅ [angry/ja.html](angry/ja.html) | ✅ | [@KosukeKamiya] |
+| Deutsch (`de`) | ✅ [de.html](de.html) | ✅ [angry/de.html](angry/de.html) | ✅ | native |
 
 [@webknjaz]: https://github.com/sponsors/webknjaz
 [@alexeev-prog]: https://github.com/alexeev-prog

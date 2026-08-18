@@ -59,6 +59,12 @@
       "hreflang": "ja",
       "label": "JA — 日本語",
       "file": "ja.html"
+    },
+    {
+      "code": "de",
+      "hreflang": "de",
+      "label": "DE — Deutsch",
+      "file": "de.html"
     }
   ]
 }
