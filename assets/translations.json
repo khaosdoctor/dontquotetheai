@@ -61,6 +61,12 @@
       "file": "ja.html"
     },
     {
+      "code": "de",
+      "hreflang": "de",
+      "label": "DE — Deutsch",
+      "file": "de.html"
+    },
+    {
       "code": "id",
       "hreflang": "id",
       "label": "ID — Bahasa Indonesia",
