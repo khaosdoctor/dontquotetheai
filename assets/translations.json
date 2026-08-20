@@ -65,6 +65,12 @@
       "hreflang": "id",
       "label": "ID — Bahasa Indonesia",
       "file": "id.html"
+    },
+    {
+      "code": "ne",
+      "hreflang": "ne",
+      "label": "NE — नेपाली",
+      "file": "ne.html"
     }
   ]
 }
