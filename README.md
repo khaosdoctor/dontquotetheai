@@ -28,6 +28,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 | 日本語 (`ja`) | ✅ [ja.html](ja.html) | ✅ [angry/ja.html](angry/ja.html) | ✅ | [@KosukeKamiya] |
 | Српски (`sr`) | ✅ [sr.html](sr.html) | ✅ [angry/sr.html](angry/sr.html) | ✅ | [@GoodbyePlanet] |
 | Srpski (lat.) (`sr-latn`) | ✅ [sr-latn.html](sr-latn.html) | ✅ [angry/sr-latn.html](angry/sr-latn.html) | ✅ | [@GoodbyePlanet] |
+| Deutsch (`de`) | ✅ [de.html](de.html) | ✅ [angry/de.html](angry/de.html) | ✅ | [@shimscho] |
 
 [@webknjaz]: https://github.com/sponsors/webknjaz
 [@alexeev-prog]: https://github.com/alexeev-prog
@@ -38,6 +39,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 [@georgesnoe]: https://github.com/georgesnoe
 [@KosukeKamiya]: https://github.com/KosukeKamiya
 [@GoodbyePlanet]: https://github.com/GoodbyePlanet
+[@shimscho]: https://github.com/shimscho
 
 Want to suggest a language? Open an issue or just send the PR (even a half-finished one). We can iterate. Huge thanks to everyone in the Maintainer column above who took the time to make this page work in their language.
 
