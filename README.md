@@ -5,7 +5,7 @@
 
 ![](./assets/og-image.png)
 
-> A website you send to that one person who answers every question with eight hundred words of ChatGPT they clearly didn't read.
+A website you send to that one person who answers every question with eight hundred words of ChatGPT they clearly didn't read.
 
 > **This is satire.** Nobody is being attacked, nobody is being cancelled, nobody hates AI, have some humor. Use the tools. Just, you know, read them first.
 
