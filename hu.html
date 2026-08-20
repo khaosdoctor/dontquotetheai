@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Don't paste the AI.</title>
-  <meta name="description" content="If someone asks you a question, paste your answer — not the chatbot's.">
-  <meta property="og:title" content="Don't paste the AI.">
-  <meta property="og:description" content="If someone asks you a question, paste your answer — not the chatbot's.">
+  <title>Ne másold be az AI választ.</title>
+  <meta name="description" content="Ha valaki kérdez Tőled valamit, a saját válaszodat küld el — ne a chatbot válaszát.">
+  <meta property="og:title" content="Ne másold be az AI választ.">
+  <meta property="og:description" content="Ha valaki kérdez tőled valamit, a saját válaszodat küld el — ne a chatbot válaszát.">
   <meta property="og:image" content="https://dontpastetheai.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -47,75 +47,76 @@
 
     <header>
       <div class="doc-meta">
-        <span>Prefer another language?</span>
+        <span>Más nyelven szeretnéd látni?</span>
         <label class="lang" aria-label="Language">
-          <select data-lang-select><option>EN — English</option></select>
+          <select data-lang-select><option>HU — Magyar</option></select>
         </label>
       </div>
-      <h1>Don't paste<br>the <span class="yell">AI</span>, please.</h1>
-      <p class="lede">When someone asks you something, they want <em>your</em> answer.
-        Not a wall of <span class="marker">unedited ChatGPT output</span>. A short reply from you beats
-        a long one from a model, every time.</p>
+      <h1>Ne másold be<br>az <span class="yell">AI</span> választ, kérlek.</h1>
+      <p class="lede">Ha valaki kérdez tőled valamit, a <em>te</em> válaszodra kíváncsi.
+        Nem egy rakás <span class="marker">szerkesztés nélküli MI válaszra</span>. Egy rövid válasz Tőled mindig jobb
+        mint egy hosszú az MI modelltől.</p>
     </header>
 
     <section>
-      <h2>What's happening</h2>
-      <p>Someone asked you a real question. You popped it into a chatbot, copied the answer, and sent it back.
-        It felt fast. It felt helpful. And it usually isn't.</p>
-      <p>The person on the other side <strong>has the same tools you do</strong>. If they wanted the generic
-        answer, they would have gotten it in four seconds. They asked <em>you</em> because they wanted
-        your take on it... Your context, your taste, your judgement.</p>
+      <h2>Mi is történik</h2>
+      <p>Valaki feltett neked egy kérdést. Te bedobtad a chatbotnak, kimásoltad a válszt, és visszaküldted.
+        Gyorsan letudtad. Úgy érezted hogy segítesz. De legtöbbször nem segít.</p>
+      <p>A kérdező <strong>szintén hozzáfér ezekhez az eszközökhöz</strong>. Ha egy általános választ
+        akarnának, megkapnák 4 másodperc alatt. De <em>têged</em> kérdeztek, mert a te
+        véleményedre kíváncsiak... A te tapasztalatodra, a te ízlésedre, a te véleményedre.</p>
 
-      <p>The world is filled with people that don't want to read or think about things, don't be one of them.</p>
+      <p>A világ tele van olyan emberekkel, akik nem akarnak olvasni vagy gondolkodni a dolgokon, ne legyél egy közülük.</p>
     </section>
 
     <section>
-      <h2>Try this instead</h2>
+      <h2>Próbáld inkább ezt</h2>
       <ol>
-        <li>Use the AI. Really, go for it. It's a great drafting partner. Just <strong>read what it gave you</strong>,
-          then write your own take on it, don't just be the proxy between it and the answer.</li>
-        <li>Pull out the bit that actually answers the question. Drop the rest. Three sentences from you is plenty.</li>
-        <li>If a piece of the model's answer is genuinely useful, quote it and say <em>why</em>.
-          <span class="marker"><em>I checked with Claude and this part lines up:"</em></span> works great.
+        <li>Használd az MI-t. Tényleg, csináld. Nagyon jó partner az ötletelésben. De <strong>olvase el a válaszát</strong>,
+          és fogalmazd meg belőle a te véleményedet, ne csak egy szimpla közvetítő legyél.</li>
+        <li>Válogasd ki a részeket, amik a tényleges válaszhoz kellenek. Dobd el a többit. Három mondta tőled sokkal jobb.</li>
+        <li>Ha egy komplett része az MI válasznak úgy jó ahogy van, akkor idézd es mondd el <em>miért</em>.
+          <span class="marker"><em>Megkérdeztem az MI-t és ez a rész tökêletes:"</em></span> ez így elfogadható.
         </li>
-        <li>If you don't have anything to add, it's okay to say so. <span class="marker"><em>"No strong opinion
-              here"</em></span> is a real, helpful reply.
+        <li>Ha nem tudsz hozzá adni a válaszhoz, akkor az is rendben van. <span class="marker"><em>"Ehhez a kérdéshez nem tudok
+              sokat hozzáfűzni"</em></span> ez is egy elfogadható válasz.
         </li>
       </ol>
     </section>
 
     <section>
-      <h2>Want to send this to someone?</h2>
-      <p>If someone just dropped a wall of model output in your DMs, Slack, or PR review, you can send them
-        this link. No lecture required.</p>
+      <h2>Elküldenéd ezt valakinek?</h2>
+      <p>Ha valaki egy rakás MI generált szöveget küldött neked üzenetben, Slacken, vagy PR reviewban, küldd el nekik
+        ezt a linket. Nem kell kioktatni.</p>
       <p class="u-center u-mt-lg"><button id="copyBtn" type="button" class="url-tag-big"
-          data-copy-aria="Copy {domain} to clipboard" data-copied-text="copied!">dontpastetheai.com</button></p>
-      <p class="u-center u-small u-muted u-mt-md">Click to copy. They'll get the hint.</p>
+          data-copy-aria="Másold a {domain} linket a vágólapra" data-copied-text="copied!">dontpastetheai.com</button></p>
+      <p class="u-center u-small u-muted u-mt-md">Kattints a másoláshoz. Átmegy majd az üzenet.</p>
     </section>
 
     <section>
-      <h2>Want a stronger version?</h2>
-      <p>If you'd rather send someone the version with <em>feelings</em> attached, we've got you covered.</p>
-      <p class="u-center u-mt-lg"><a class="cta-angry" data-variant-toggle href="angry/">Take me to the angry version →</a></p>
-      <p class="u-center u-small u-muted u-mt-md">Not safe for sending to your manager. Probably.</p>
+      <h2>Egy kicsit csípősebb verzió kéne?</h2>
+      <p>Ha valakinek egy <em>érzelemdúsabb</em> verziót küldenél, olyan is van.</p>
+      <p class="u-center u-mt-lg"><a class="cta-angry" data-variant-toggle href="angry/">Gyerünk a morcosabb verzióhoz →</a></p>
+      <p class="u-center u-small u-muted u-mt-md">De ezt inkább ne a főnöködnek küldd el. Bár te tudod.</p>
     </section>
 
     <div class="signature">
-      <div class="name">— with mild love,<br>everyone you talk to</div>
-      <small>spiritual cousin of <a href="https://nohello.net" target="_blank" rel="noopener">nohello.net</a> &amp;
-        <a href="https://dontasktoask.com" target="_blank" rel="noopener">dontasktoask.com</a>.<br>written
-        by a human, on purpose.</small>
+      <div class="name">— sok szeretettel,<br>mindenki akivel beszélsz</div>
+      <small>lelki társ oldalak <a href="https://nohello.net" target="_blank" rel="noopener">nohello.net</a> &amp;
+        <a href="https://dontasktoask.com" target="_blank" rel="noopener">dontasktoask.com</a>.<br>húsvér
+        emberek által készítve, természetesen.</small>
     </div>
 
     <div class="footer">
-      <p><em>If someone sent you this link: they like you. Read it, take a breath, and write the next reply
-          yourself.</em></p>
-      <p>Satire, mostly. Free to share, remix, and translate — <a href="https://github.com/khaosdoctor/dontquotetheai"
-          target="_blank" rel="noopener">PRs welcome on
-          GitHub</a>.</p>
+      <p><em>Ha valaki elküldte neked ezt a linket, az azért van mert jót akar. Olvasd el, vegyél egy nagy levegőt, és a következőre te magad
+          válaszolj.</em></p>
+      <p>Szatíra, leginkább. Szabad megosztani, alakítani, és fordítani — <a href="https://github.com/khaosdoctor/dontquotetheai"
+          target="_blank" rel="noopener">PR jöhet
+          GitHub-on</a>.</p>
     </div>
 
   </main>
 </body>
 
 </html>
+-
