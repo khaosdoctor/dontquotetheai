@@ -26,6 +26,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 | Español (`es`) | ✅ [es.html](es.html) | ✅ [angry/es.html](angry/es.html) | ✅ | [@PotterSys] |
 | Français (`fr`) | ✅ [fr.html](fr.html) | ✅ [angry/fr.html](angry/fr.html) | ✅ | [@georgesnoe] |
 | 日本語 (`ja`) | ✅ [ja.html](ja.html) | ✅ [angry/ja.html](angry/ja.html) | ✅ | [@KosukeKamiya] |
+| Türkçe (`tr`) | ✅ [tr.html](tr.html) | ✅ [angry/tr.html](angry/tr.html) | ✅ | [@erdemgezer] |
 | Српски (`sr`) | ✅ [sr.html](sr.html) | ✅ [angry/sr.html](angry/sr.html) | ✅ | [@GoodbyePlanet] |
 | Srpski (lat.) (`sr-latn`) | ✅ [sr-latn.html](sr-latn.html) | ✅ [angry/sr-latn.html](angry/sr-latn.html) | ✅ | [@GoodbyePlanet] |
 | Deutsch (`de`) | ✅ [de.html](de.html) | ✅ [angry/de.html](angry/de.html) | ✅ | [@shimscho] |
@@ -38,6 +39,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 [@PotterSys]: https://github.com/PotterSys
 [@georgesnoe]: https://github.com/georgesnoe
 [@KosukeKamiya]: https://github.com/KosukeKamiya
+[@erdemgezer]: https://github.com/erdemgezer
 [@GoodbyePlanet]: https://github.com/GoodbyePlanet
 [@shimscho]: https://github.com/shimscho
 
