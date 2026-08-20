@@ -59,6 +59,18 @@
       "hreflang": "ja",
       "label": "JA — 日本語",
       "file": "ja.html"
+    },
+    {
+      "code": "sr",
+      "hreflang": "sr",
+      "label": "SR — Српски",
+      "file": "sr.html"
+    },
+    {
+      "code": "sr-latn",
+      "hreflang": "sr-Latn",
+      "label": "SR — Srpski (lat.)",
+      "file": "sr-latn.html"
     }
   ]
 }
