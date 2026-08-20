@@ -61,6 +61,12 @@
       "file": "ja.html"
     },
     {
+      "code": "hu",
+      "hreflang": "hu",
+      "label": "HU — Magyar",
+      "file": "hu.html"
+    },
+    {
       "code": "tr",
       "hreflang": "tr",
       "label": "TR — Türkçe",
