@@ -61,6 +61,36 @@
       "file": "ja.html"
     },
     {
+      "code": "hu",
+      "hreflang": "hu",
+      "label": "HU — Magyar",
+      "file": "hu.html"
+    },
+    {
+      "code": "tr",
+      "hreflang": "tr",
+      "label": "TR — Türkçe",
+      "file": "tr.html"
+    },
+    {
+      "code": "sr",
+      "hreflang": "sr",
+      "label": "SR — Српски",
+      "file": "sr.html"
+    },
+    {
+      "code": "sr-latn",
+      "hreflang": "sr-Latn",
+      "label": "SR — Srpski (lat.)",
+      "file": "sr-latn.html"
+    },
+    {
+      "code": "de",
+      "hreflang": "de",
+      "label": "DE — Deutsch",
+      "file": "de.html"
+    },
+    {
       "code": "id",
       "hreflang": "id",
       "label": "ID — Bahasa Indonesia",
