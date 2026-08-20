@@ -61,6 +61,18 @@
       "file": "ja.html"
     },
     {
+      "code": "sr",
+      "hreflang": "sr",
+      "label": "SR — Српски",
+      "file": "sr.html"
+    },
+    {
+      "code": "sr-latn",
+      "hreflang": "sr-Latn",
+      "label": "SR — Srpski (lat.)",
+      "file": "sr-latn.html"
+    },
+    {
       "code": "de",
       "hreflang": "de",
       "label": "DE — Deutsch",
