@@ -7,6 +7,12 @@
       "file": "index.html"
     },
     {
+      "code": "ko",
+      "hreflang": "ko",
+      "label": "KO — 한국어",
+      "file": "ko.html"
+    },
+    {
       "code": "uk",
       "hreflang": "uk",
       "label": "UK — Українська",
@@ -101,8 +107,14 @@
       "hreflang": "ne",
       "label": "NE — नेपाली",
       "file": "ne.html"
-    }
-	{
+    },
+    {
+      "code": "fa",
+      "hreflang": "fa",
+      "label": "FA — فارسی",
+      "file": "fa.html"
+    },
+    {
       "code": "pl",
       "hreflang": "pl",
       "label": "PL - Polski",
