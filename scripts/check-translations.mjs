@@ -68,6 +68,19 @@ const languages = translations.languages;
 // Quick lookup helpers
 const langByFile = new Map(languages.map((l) => [l.file, l]));
 
+// --- Check 0: alphabetical order by code ---
+const codes = languages.map((l) => l.code);
+const sorted = [...codes].sort();
+for (let i = 0; i < codes.length; i++) {
+  if (codes[i] !== sorted[i]) {
+    err(
+      "assets/translations.json",
+      `languages not sorted by code: "${codes[i]}" at index ${i}, expected "${sorted[i]}"`
+    );
+    break;
+  }
+}
+
 // --- Check 9: registered HTML files (no orphans) ---
 const rootHtml = readdirSync(REPO_ROOT).filter(
   (f) => f.endsWith(".html") && statSync(join(REPO_ROOT, f)).isFile()
