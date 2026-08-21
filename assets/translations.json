@@ -113,6 +113,12 @@
       "hreflang": "fa",
       "label": "FA — فارسی",
       "file": "fa.html"
+    },
+    {
+      "code": "pl",
+      "hreflang": "pl",
+      "label": "PL - Polski",
+      "file": "pl.html"
     }
   ]
 }
