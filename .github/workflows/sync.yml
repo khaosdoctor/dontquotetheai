@@ -42,6 +42,29 @@ jobs:
           curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-devanagari@latest/devanagari-400-normal.ttf" -o ~/.local/share/fonts/noto-sans-devanagari.ttf || true
           fc-cache -f
 
+      - name: Sort translations.json alphabetically
+        run: |
+          node -e "
+            const fs = require('fs');
+            const p = 'assets/translations.json';
+            const data = JSON.parse(fs.readFileSync(p, 'utf8'));
+            const sorted = [...data.languages].sort((a, b) => a.code.localeCompare(b.code));
+            const changed = sorted.some((s, i) => s.code !== data.languages[i].code);
+            if (!changed) { console.log('translations.json already sorted.'); process.exit(0); }
+            data.languages = sorted;
+            fs.writeFileSync(p, JSON.stringify(data, null, 2) + '\n');
+            console.log('translations.json was not sorted, fixed.');
+          "
+          if [ -n "$(git diff assets/translations.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/translations.json
+            git commit -m "chore: sort translations.json alphabetically"
+            git push
+            echo "::error::translations.json was not sorted. Fixed and pushed. CI will re-run."
+            exit 1
+          fi
+
       - name: Sync hreflang blocks
         run: node scripts/sync-hreflang.mjs
 
