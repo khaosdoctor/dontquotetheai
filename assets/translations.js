@@ -26,9 +26,11 @@
   const dataUrl = (isAngry ? "../" : "") + "assets/translations.json";
 
   function preferredLanguage(languages) {
-    const savedCode = localStorage.getItem(LANGUAGE_PREFERENCE_KEY);
-    const saved = languages.find(({ code }) => code === savedCode);
-    if (saved) return saved;
+    try {
+      const savedCode = localStorage.getItem(LANGUAGE_PREFERENCE_KEY);
+      const saved = languages.find(({ code }) => code === savedCode);
+      if (saved) return saved;
+    } catch (_) { /* storage blocked (private mode, etc.) */ }
 
     // Browser locales are usually regional (for example, ko-KR), while a
     // translation can be registered as its base language (ko). Try exact
@@ -93,7 +95,9 @@
       select.addEventListener("change", (e) => {
         const v = e.target.value;
         const selected = languages.find(({ file }) => file === v);
-        if (selected) localStorage.setItem(LANGUAGE_PREFERENCE_KEY, selected.code);
+        try {
+          if (selected) localStorage.setItem(LANGUAGE_PREFERENCE_KEY, selected.code);
+        } catch (_) {}
         if (v && v !== here) location.href = v;
       });
     })
