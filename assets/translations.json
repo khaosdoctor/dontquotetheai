@@ -101,6 +101,12 @@
       "hreflang": "ne",
       "label": "NE — नेपाली",
       "file": "ne.html"
+    },
+    {
+      "code": "fa",
+      "hreflang": "fa",
+      "label": "FA — فارسی",
+      "file": "fa.html"
     }
   ]
 }
