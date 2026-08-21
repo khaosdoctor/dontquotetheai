@@ -81,6 +81,20 @@ They cross-link to each other (red button on smooth → angry, green button on a
 
 CSS and assets are at the root (`/styles.css`, `/assets/`). Angry pages reference them with `../`.
 
+## Student page
+
+The site also has a teacher-facing page for students who submit AI-generated work without reading or understanding it.
+
+The student page has its own language dropdown. Available student translations are registered in
+`assets/translations.json` under `pages.student`:
+
+| Language | Student page |
+|----------|--------------|
+| English (`en`) | ✅ [`/student`](student.html) |
+| Français (`fr`) | ✅ [`/student/fr`](student/fr.html) |
+
+
+
 ## How it works
 
 Static HTML only. A few things worth knowing:

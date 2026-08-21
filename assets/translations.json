@@ -102,5 +102,19 @@
       "label": "NE — नेपाली",
       "file": "ne.html"
     }
-  ]
+  ],
+  "pages": {
+    "student": [
+      {
+        "code": "en",
+        "label": "EN — English",
+        "file": "student.html"
+      },
+      {
+        "code": "fr",
+        "label": "FR — Français",
+        "file": "student/fr.html"
+      }
+    ]
+  }
 }

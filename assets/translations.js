@@ -20,8 +20,32 @@
     : last.endsWith(".html")
       ? last
       : `${last}.html`;
+  const page = document.documentElement.dataset.page || "smooth";
   const isAngry = location.pathname.includes("/angry/");
-  const dataUrl = (isAngry ? "../" : "") + "assets/translations.json";
+  const dataUrl = page === "student"
+    ? "/assets/translations.json"
+    : (isAngry ? "../" : "") + "assets/translations.json";
+
+  function cleanUrl(file) {
+    if (page === "student") {
+      return `/${file.replace(/\.html$/, "")}`;
+    }
+    if (isAngry) {
+      return file === "index.html" ? "/angry/" : `/angry/${file.replace(/\.html$/, "")}`;
+    }
+    return file === "index.html" ? "/" : `/${file.replace(/\.html$/, "")}`;
+  }
+
+  function matchesCurrentRoute(file) {
+    const pathname = location.pathname.replace(/\/$/, "") || "/";
+    const clean = cleanUrl(file).replace(/\/$/, "") || "/";
+    const physical = page === "student"
+      ? `/${file}`
+      : isAngry
+        ? `/angry/${file}`
+        : `/${file}`;
+    return pathname === clean || location.pathname === physical;
+  }
 
   // Variant toggle: links marked with [data-variant-toggle] flip between the
   // polite (/) and angry (/angry/) version of the *current* page, so each
@@ -34,9 +58,12 @@
 
   fetch(dataUrl)
     .then((r) => r.json())
-    .then(({ languages }) => {
+    .then((data) => {
+      const languages = page === "student"
+        ? (data.pages?.student || [])
+        : data.languages;
       const select = document.querySelector("[data-lang-select]");
-      if (!select) return;
+      if (!select || !languages?.length) return;
       select.replaceChildren();
 
       languages.forEach(({ file, label }) => {
@@ -45,11 +72,31 @@
         opt.textContent = label;
         select.appendChild(opt);
       });
-      select.value = here;
+      const current = languages.find(({ file }) => matchesCurrentRoute(file));
+      const browserLanguages = navigator.languages || [navigator.language];
+      const detected = browserLanguages
+        .map((locale) => locale.toLowerCase())
+        .map((locale) => languages.find(({ code }) =>
+          locale === code.toLowerCase() || locale.startsWith(`${code.toLowerCase()}-`)))
+        .find(Boolean);
+      select.value = (current || detected || languages[0]).file;
+
+      if (page === "smooth") {
+        const studentLanguages = data.pages?.student || [];
+        const currentCode = current?.code || detected?.code || "en";
+        const studentLanguage = studentLanguages.find(({ code }) => code === currentCode)
+          || studentLanguages.find(({ code }) => code === "en");
+        if (studentLanguage) {
+          document.querySelectorAll("[data-student-toggle]").forEach((link) => {
+            link.href = cleanUrl(studentLanguage.file);
+          });
+        }
+      }
 
       select.addEventListener("change", (e) => {
         const v = e.target.value;
-        if (v && v !== here) location.href = v;
+        const selected = languages.find(({ file }) => file === v);
+        if (selected) location.href = cleanUrl(selected.file);
       });
     })
     .catch((err) => console.error("translations: failed to load", err));

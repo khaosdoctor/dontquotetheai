@@ -11,6 +11,7 @@ const REPO_ROOT = resolve(__dirname, "..");
 const CANONICAL_HOST = "dontpastetheai.com";
 const OLD_HOST = "dontquotetheai.com";
 const OLD_FILENAMES = ["ptbr.html", "zhtw.html"];
+const STANDALONE_PAGES = new Set(["student.html", "student/fr.html"]);
 
 // findings: Map<file, { errors: string[], warnings: string[] }>
 const findings = new Map();
@@ -72,6 +73,12 @@ const langByFile = new Map(languages.map((l) => [l.file, l]));
 const rootHtml = readdirSync(REPO_ROOT).filter(
   (f) => f.endsWith(".html") && statSync(join(REPO_ROOT, f)).isFile()
 );
+const studentDir = join(REPO_ROOT, "student");
+const studentHtml = existsSync(studentDir)
+  ? readdirSync(studentDir).filter(
+      (f) => f.endsWith(".html") && statSync(join(studentDir, f)).isFile(),
+    )
+  : [];
 const angryDir = join(REPO_ROOT, "angry");
 const angryHtml = existsSync(angryDir)
   ? readdirSync(angryDir).filter(
@@ -81,7 +88,14 @@ const angryHtml = existsSync(angryDir)
 
 const registered = new Set(languages.map((l) => l.file));
 for (const f of rootHtml) {
-  if (!registered.has(f)) err(f, `Orphan: not registered in translations.json`);
+  if (!registered.has(f) && !STANDALONE_PAGES.has(f)) {
+    err(f, `Orphan: not registered in translations.json`);
+  }
+}
+for (const f of studentHtml) {
+  if (!STANDALONE_PAGES.has(`student/${f}`)) {
+    err(`student/${f}`, `Orphan: not registered as a standalone page`);
+  }
 }
 for (const f of angryHtml) {
   if (!registered.has(f))
