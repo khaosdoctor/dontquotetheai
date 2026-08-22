@@ -91,10 +91,13 @@ One entry, once:
 {
   "code": "es",
   "hreflang": "es",
+  "locale": "es_ES",
   "label": "ES — Español",
   "file": "es.html"
 }
 ```
+
+`locale` is the `og:locale` value (`language_TERRITORY`). Keep the entries sorted by `code`, CI sorts them for you if you forget.
 
 Same `file` value applies to both smooth (`/es.html`) and angry (`/angry/es.html`). The dropdown in every existing page picks it up automatically — no per-file `<option>` edits.
 
@@ -154,9 +157,9 @@ The two versions have different tones. Don't merge them.
 - **Smooth** — friendly, work-safe, nohello.net-ish. Direct without being aggressive. Picture sending it to a coworker you respect and don't want to weird out. No swearing, no insults, just a clear ask. Check `pt-br.html` for how PT-BR pulls it off.
 - **Angry** — satire with actual feelings. Frustrated, opinionated, a bit rude on purpose. Don't smooth it into corporate-speak. If your language has real slang for "lazy AI paste behavior", use it. Goal: reader feels called out, not lectured. Look at `angry/pt-br.html` — it's how people actually talk in Portuguese, not textbook stuff.
 
-## Student page (optional)
+## Student page
 
-There is a third page at `/student/`, written from a teacher's perspective for students who submit AI-generated work they never read. Translating it is optional, the language dropdown on that page only lists the languages that have one.
+There is a third page at `/student/`, written from a teacher's perspective for students who submit AI-generated work they never read. Every language has one, but most were machine translated in bulk (see the table in the README), so replacing yours with a real human pass is very welcome.
 
 It works like `angry/`, one directory with `index.html` for English and `<code>.html` for everything else:
 
@@ -164,13 +167,15 @@ It works like `angry/`, one directory with `index.html` for English and `<code>.
 student/index.html  →  student/<code>.html
 ```
 
-Register it under `pages.student` in `assets/translations.json`, using the bare filename:
+Registered under `pages.student` in `assets/translations.json`, same shape as a language entry but with the bare filename:
 
 ```json
-{ "code": "es", "label": "ES — Español", "file": "es.html" }
+{ "code": "es", "hreflang": "es", "locale": "es_ES", "label": "ES — Español", "file": "es.html" }
 ```
 
-Registering it is all you need to do. CI generates the hreflang block, the `og:locale` tag and the sitemap entry from that one JSON edit, and it also points the teacher button on your smooth page at your translation instead of the English one. Languages without a student page fall back to English, so nothing breaks if you skip it.
+That one entry is all the wiring you need. CI generates the hreflang block, the `og:locale` tag and the sitemap entry from it, and it points the teacher button on your smooth page at your translation instead of the English one.
+
+Two things specific to this page: set `data-copy-path="/student/<code>"` on the copy button so it shares your page rather than the homepage, and remember the assets are one directory up, so paths are `../styles.css` and `../assets/`.
 
 ## Right-to-left languages
 
@@ -180,21 +185,24 @@ Add `dir="rtl"` to the `<html>` tag. CSS doesn't have logical properties everywh
 
 The workflow has two phases:
 
-- **On PR:** `scripts/check-translations.mjs` runs and must pass. `scripts/sync-hreflang.mjs --check` and `scripts/build-og-images.mjs --check` also run, but only as informational status — drift there won't block your merge.
-- **On push to main:** the sync scripts run for real, commit the regenerated hreflang blocks and any missing PNGs back with `[skip ci]`, which triggers Cloudflare to redeploy.
+- **On PR:** `scripts/check-translations.mjs` runs and must pass. `scripts/sync-hreflang.mjs --check`, `scripts/sync-seo.mjs --check` and `scripts/build-og-images.mjs --check` also run, but only as informational status — drift there won't block your merge.
+- **On push to main:** the sync scripts run for real, commit the regenerated hreflang blocks, `og:locale` tags, `sitemap.xml`, `robots.txt` and any missing PNGs back with `[skip ci]`, which triggers Cloudflare to redeploy.
 
 `check-translations.mjs` checks:
 
 - Your `translations.json` entry exists and has all required fields
+- The languages are sorted by `code`
 - The smooth + angry files exist at the expected paths
 - Canonical URLs and og:url use `https://dontpastetheai.com/...`
 - The OG image SVG is present (PNG is rendered by CI if missing)
+- Section pages under `pages.*` (student) get the same canonical, og:url and `<html lang>` checks
 
-You can run all three locally before pushing:
+You can run them all locally before pushing:
 
 ```bash
 node scripts/check-translations.mjs
 node scripts/sync-hreflang.mjs
+node scripts/sync-seo.mjs
 node scripts/build-og-images.mjs   # needs rsvg-convert installed
 ```
 
