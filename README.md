@@ -54,8 +54,36 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 [@Arceister]: https://github.com/Arceister
 [@kaq6822]: https://github.com/kaq6822
 [@am2mcu]: https://github.com/am2mcu
+[@ymaldor1]: https://github.com/ymaldor1
 
 Want to suggest a language? Open an issue or just send the PR (even a half-finished one). We can iterate. Huge thanks to everyone in the Maintainer column above who took the time to make this page work in their language.
+
+### Student page
+
+A teacher-facing page at `/student/` for students who hand in AI-generated work they never read. Registered under `pages.student` in `assets/translations.json`.
+
+| Language | Student page | Maintainer |
+|----------|--------------|-----------|
+| Deutsch (`de`) | ✅ [`/student/de`](student/de.html) | Machine Translated |
+| English (`en`) | ✅ [`/student/`](student/index.html) | [@ymaldor1] |
+| Español (`es`) | ✅ [`/student/es`](student/es.html) | Machine Translated |
+| فارسی (`fa`) | ✅ [`/student/fa`](student/fa.html) | Machine Translated |
+| Français (`fr`) | ✅ [`/student/fr`](student/fr.html) | [@ymaldor1] |
+| Magyar (`hu`) | ✅ [`/student/hu`](student/hu.html) | Machine Translated |
+| Bahasa Indonesia (`id`) | ✅ [`/student/id`](student/id.html) | Machine Translated |
+| Italiano (`it`) | ✅ [`/student/it`](student/it.html) | Machine Translated |
+| 日本語 (`ja`) | ✅ [`/student/ja`](student/ja.html) | Machine Translated |
+| 한국어 (`ko`) | ✅ [`/student/ko`](student/ko.html) | Machine Translated |
+| नेपाली (`ne`) | ✅ [`/student/ne`](student/ne.html) | Machine Translated |
+| Polski (`pl`) | ✅ [`/student/pl`](student/pl.html) | Machine Translated |
+| Português (BR) (`pt-br`) | ✅ [`/student/pt-br`](student/pt-br.html) | Machine Translated |
+| Русский (`ru`) | ✅ [`/student/ru`](student/ru.html) | Machine Translated |
+| Српски (`sr`) | ✅ [`/student/sr`](student/sr.html) | Machine Translated |
+| Srpski (lat.) (`sr-latn`) | ✅ [`/student/sr-latn`](student/sr-latn.html) | Machine Translated |
+| Türkçe (`tr`) | ✅ [`/student/tr`](student/tr.html) | Machine Translated |
+| Українська (`uk`) | ✅ [`/student/uk`](student/uk.html) | Machine Translated |
+| 简体中文 (`zh-cn`) | ✅ [`/student/zh-cn`](student/zh-cn.html) | Machine Translated |
+| 繁體中文 (台灣) (`zh-tw`) | ✅ [`/student/zh-tw`](student/zh-tw.html) | Machine Translated |
 
 ## Notes on AI usage
 
@@ -69,7 +97,7 @@ The text of the website is actually mine, believe it or not. I ran that through 
 
 People over [HN](https://news.ycombinator.com/item?id=49371857#49374859) got a bit mad at me because I used AI and said I was being "hypocritical", which doesn't really make sense because the whole point of the website is to not _paste things blindly_, I never said you cannot use AI. So I decided to do a quick revamp of the text in the original language and English, even though it's not my native language.
 
-If you think the text is bad or still looks like AI, please send me a PR :heart:
+If you think the text is bad or still looks like AI, please send me a PR :heart: And if you want to complain about it, I have [a place dedicated for your rants](https://github.com/khaosdoctor/dontquotetheai/issues/31).
 
 ## Two versions
 
@@ -91,25 +119,11 @@ They cross-link to each other (red button on smooth → angry, green button on a
 
 CSS and assets are at the root (`/styles.css`, `/assets/`). Angry pages reference them with `../`.
 
-## Student page
-
-The site also has a teacher-facing page for students who submit AI-generated work without reading or understanding it.
-
-The student page has its own language dropdown. Available student translations are registered in
-`assets/translations.json` under `pages.student`:
-
-| Language | Student page |
-|----------|--------------|
-| English (`en`) | ✅ [`/student/`](student/index.html) |
-| Français (`fr`) | ✅ [`/student/fr`](student/fr.html) |
-
-
-
 ## How it works
 
 Static HTML only. A few things worth knowing:
 
-- `assets/translations.json` is the single source of truth for languages. The language dropdown is built at runtime by `assets/translations.js` from it (each HTML file has a single matching `<option>` as a no-JS fallback). The same script also rewrites the smooth↔angry cross-link `href` on any element marked `data-variant-toggle`, so **translated files don't have to hardcode their counterpart's path**. A GitHub Action on push to main runs `scripts/sync-hreflang.mjs` that regenerates the `<link rel="alternate" hreflang>` block between the `<!-- hreflang:start -->` / `<!-- hreflang:end -->` markers in the HTML file `scripts/build-og-images.mjs` renders any missing PNGs from their SVG sources, and `scripts/sync-seo.mjs` regenerates `sitemap.xml`, `robots.txt` and the `og:locale` tag on every page, then commits the result, which triggers Cloudflare to redeploy. This is simpler for translators
+- `assets/translations.json` is the single source of truth for languages. The language dropdown is built at runtime by `assets/translations.js` from it (each HTML file has a single matching `<option>` as a no-JS fallback). The same script also rewrites the smooth↔angry cross-link `href` on any element marked `data-variant-toggle`, so **translated files don't have to hardcode their counterpart's path**. A GitHub Action on push to main runs `scripts/sync-hreflang.mjs` that regenerates the `<link rel="alternate" hreflang>` block between the `<!-- hreflang:start -->` / `<!-- hreflang:end -->` markers in the HTML file, `scripts/build-og-images.mjs` renders any missing PNGs from their SVG sources, and `scripts/sync-seo.mjs` regenerates `sitemap.xml`, `robots.txt` and the `og:locale` tag on every page, then commits the result, which triggers Cloudflare to redeploy. This is simpler for translators
 - Cloudflare Workers Assets serves `.html` files at clean URLs (`/it` resolves to `it.html`). `assets/translations.js` normalizes the last path segment so the dropdown still highlights the current page when the extension is missing.
 - `<link rel="alternate" hreflang="...">` tags stay **static** in each `<head>` on purpose (Googlebot renders JS but Bing / Yandex / Baidu are flaky about it).
 - The copy button reads `location.hostname` so the same code works on both domains (dontpastetheai.com or dontquotetheai.com), it copies whichever one the visitor visited. The inline `<script>` that used to live in every HTML file got deduped into `assets/copy.js`; translatable strings come from `data-copy-aria` and `data-copied-text` attributes on the button itself.
@@ -121,7 +135,8 @@ sync everything:
 
 - **`validate.yml`**, runs on every PR and on push to `main`. Executes `scripts/check-translations.mjs` (blocking) to verify each language registered in `assets/translations.json` has its smooth + angry files, correct canonical/og:url, and an OG SVG. It also runs `scripts/sync-hreflang.mjs --check`, `scripts/sync-seo.mjs --check` and `scripts/build-og-images.mjs --check` as **informational** steps (`continue-on-error: true`), any differences there are reported but doesn't block the merge, because the sync workflow fixes it on push.
 - **`sync.yml`**, runs on push to `main`. Installs the libs to render image and
-  the fonts, then runs both scripts on the above list and commit everything.
+  the fonts, then sorts `translations.json`, runs the hreflang, OG image and
+  SEO scripts, and commits everything.
 
 ## Local dev
 
