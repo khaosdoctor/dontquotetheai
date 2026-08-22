@@ -120,5 +120,19 @@
       "label": "ZH — 繁體中文 (台灣)",
       "file": "zh-tw.html"
     }
-  ]
+  ],
+  "pages": {
+    "student": [
+      {
+        "code": "en",
+        "label": "EN — English",
+        "file": "index.html"
+      },
+      {
+        "code": "fr",
+        "label": "FR — Français",
+        "file": "fr.html"
+      }
+    ]
+  }
 }

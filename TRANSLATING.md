@@ -154,6 +154,24 @@ The two versions have different tones. Don't merge them.
 - **Smooth** — friendly, work-safe, nohello.net-ish. Direct without being aggressive. Picture sending it to a coworker you respect and don't want to weird out. No swearing, no insults, just a clear ask. Check `pt-br.html` for how PT-BR pulls it off.
 - **Angry** — satire with actual feelings. Frustrated, opinionated, a bit rude on purpose. Don't smooth it into corporate-speak. If your language has real slang for "lazy AI paste behavior", use it. Goal: reader feels called out, not lectured. Look at `angry/pt-br.html` — it's how people actually talk in Portuguese, not textbook stuff.
 
+## Student page (optional)
+
+There is a third page at `/student/`, written from a teacher's perspective for students who submit AI-generated work they never read. Translating it is optional, the language dropdown on that page only lists the languages that have one.
+
+It works like `angry/`, one directory with `index.html` for English and `<code>.html` for everything else:
+
+```
+student/index.html  →  student/<code>.html
+```
+
+Register it under `pages.student` in `assets/translations.json`, using the bare filename:
+
+```json
+{ "code": "es", "label": "ES — Español", "file": "es.html" }
+```
+
+Adding your language there also points the teacher button on your smooth page at your translation instead of the English one. Languages without a student page fall back to English, so nothing breaks if you skip it.
+
 ## Right-to-left languages
 
 Add `dir="rtl"` to the `<html>` tag. CSS doesn't have logical properties everywhere yet, so layout might look weird. Open the PR anyway — we'll fix it in review.

@@ -9,6 +9,7 @@
 // dynamic.
 //
 // HTML contract:
+//   <html data-page="student">           reads pages.student
 //   <select data-lang-select></select>   — gets populated with <option>s
 (function () {
   const LANGUAGE_PREFERENCE_KEY = "dontpastetheai.language";
@@ -23,7 +24,10 @@
       ? last
       : `${last}.html`;
   const isAngry = location.pathname.includes("/angry/");
-  const dataUrl = (isAngry ? "../" : "") + "assets/translations.json";
+  const isStudent = document.documentElement.dataset.page === "student";
+  // angry/ and student/ both live one directory below assets/.
+  const inSection = isAngry || isStudent;
+  const dataUrl = (inSection ? "../" : "") + "assets/translations.json";
 
   function preferredLanguage(languages) {
     try {
@@ -65,9 +69,10 @@
 
   fetch(dataUrl)
     .then((r) => r.json())
-    .then(({ languages }) => {
+    .then((data) => {
+      const languages = isStudent ? data.pages?.student || [] : data.languages;
       const select = document.querySelector("[data-lang-select]");
-      if (!select) return;
+      if (!select || !languages.length) return;
       select.replaceChildren();
 
       languages.forEach(({ file, label }) => {
@@ -78,9 +83,25 @@
       });
       select.value = here;
 
+      // Teacher CTA: point it at the student page in the same language when
+      // one exists, English otherwise.
+      if (!isAngry && !isStudent) {
+        const students = data.pages?.student || [];
+        const currentCode = languages.find(({ file }) => file === here)?.code;
+        const student =
+          students.find(({ code }) => code === currentCode) ||
+          students.find(({ code }) => code === "en");
+        if (student) {
+          const target = student.file === "index.html" ? "" : student.file;
+          document.querySelectorAll("[data-student-toggle]").forEach((a) => {
+            a.href = `student/${target}`;
+          });
+        }
+      }
+
       // Redirect only an initial visit to the smooth English root. Linked
       // translations and the angry variant must always keep their URL.
-      const isEnglishRoot = !isAngry && (location.pathname === "/" || location.pathname === "/index.html");
+      const isEnglishRoot = !isAngry && !isStudent && (location.pathname === "/" || location.pathname === "/index.html");
       if (isEnglishRoot) {
         const preferred = preferredLanguage(languages);
         if (preferred && preferred.file !== "index.html") {
