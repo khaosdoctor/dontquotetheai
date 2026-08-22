@@ -1,10 +1,58 @@
 {
   "languages": [
     {
+      "code": "de",
+      "hreflang": "de",
+      "label": "DE — Deutsch",
+      "file": "de.html"
+    },
+    {
       "code": "en",
       "hreflang": "en",
       "label": "EN — English",
       "file": "index.html"
+    },
+    {
+      "code": "es",
+      "hreflang": "es",
+      "label": "ES — Español",
+      "file": "es.html"
+    },
+    {
+      "code": "fa",
+      "hreflang": "fa",
+      "label": "FA — فارسی",
+      "file": "fa.html"
+    },
+    {
+      "code": "fr",
+      "hreflang": "fr",
+      "label": "FR — Français",
+      "file": "fr.html"
+    },
+    {
+      "code": "hu",
+      "hreflang": "hu",
+      "label": "HU — Magyar",
+      "file": "hu.html"
+    },
+    {
+      "code": "id",
+      "hreflang": "id",
+      "label": "ID — Bahasa Indonesia",
+      "file": "id.html"
+    },
+    {
+      "code": "it",
+      "hreflang": "it",
+      "label": "IT — Italiano",
+      "file": "it.html"
+    },
+    {
+      "code": "ja",
+      "hreflang": "ja",
+      "label": "JA — 日本語",
+      "file": "ja.html"
     },
     {
       "code": "ko",
@@ -13,10 +61,16 @@
       "file": "ko.html"
     },
     {
-      "code": "uk",
-      "hreflang": "uk",
-      "label": "UK — Українська",
-      "file": "uk.html"
+      "code": "ne",
+      "hreflang": "ne",
+      "label": "NE — नेपाली",
+      "file": "ne.html"
+    },
+    {
+      "code": "pl",
+      "hreflang": "pl",
+      "label": "PL — Polski",
+      "file": "pl.html"
     },
     {
       "code": "pt-br",
@@ -31,54 +85,6 @@
       "file": "ru.html"
     },
     {
-      "code": "zh-tw",
-      "hreflang": "zh-TW",
-      "label": "ZH — 繁體中文 (台灣)",
-      "file": "zh-tw.html"
-    },
-    {
-      "code": "zh-cn",
-      "hreflang": "zh-CN",
-      "label": "ZH — 简体中文",
-      "file": "zh-cn.html"
-    },
-    {
-      "code": "it",
-      "hreflang": "it",
-      "label": "IT — Italiano",
-      "file": "it.html"
-    },
-    {
-      "code": "es",
-      "hreflang": "es",
-      "label": "ES — Español",
-      "file": "es.html"
-    },
-    {
-      "code": "fr",
-      "hreflang": "fr",
-      "label": "FR — Français",
-      "file": "fr.html"
-    },
-    {
-      "code": "ja",
-      "hreflang": "ja",
-      "label": "JA — 日本語",
-      "file": "ja.html"
-    },
-    {
-      "code": "hu",
-      "hreflang": "hu",
-      "label": "HU — Magyar",
-      "file": "hu.html"
-    },
-    {
-      "code": "tr",
-      "hreflang": "tr",
-      "label": "TR — Türkçe",
-      "file": "tr.html"
-    },
-    {
       "code": "sr",
       "hreflang": "sr",
       "label": "SR — Српски",
@@ -91,34 +97,28 @@
       "file": "sr-latn.html"
     },
     {
-      "code": "de",
-      "hreflang": "de",
-      "label": "DE — Deutsch",
-      "file": "de.html"
+      "code": "tr",
+      "hreflang": "tr",
+      "label": "TR — Türkçe",
+      "file": "tr.html"
     },
     {
-      "code": "id",
-      "hreflang": "id",
-      "label": "ID — Bahasa Indonesia",
-      "file": "id.html"
+      "code": "uk",
+      "hreflang": "uk",
+      "label": "UK — Українська",
+      "file": "uk.html"
     },
     {
-      "code": "ne",
-      "hreflang": "ne",
-      "label": "NE — नेपाली",
-      "file": "ne.html"
+      "code": "zh-cn",
+      "hreflang": "zh-CN",
+      "label": "ZH — 简体中文",
+      "file": "zh-cn.html"
     },
     {
-      "code": "fa",
-      "hreflang": "fa",
-      "label": "FA — فارسی",
-      "file": "fa.html"
-    },
-    {
-      "code": "pl",
-      "hreflang": "pl",
-      "label": "PL - Polski",
-      "file": "pl.html"
+      "code": "zh-tw",
+      "hreflang": "zh-TW",
+      "label": "ZH — 繁體中文 (台灣)",
+      "file": "zh-tw.html"
     }
   ],
   "pages": {
@@ -126,12 +126,12 @@
       {
         "code": "en",
         "label": "EN — English",
-        "file": "student.html"
+        "file": "index.html"
       },
       {
         "code": "fr",
         "label": "FR — Français",
-        "file": "student/fr.html"
+        "file": "fr.html"
       }
     ]
   }

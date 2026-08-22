@@ -11,7 +11,6 @@ const REPO_ROOT = resolve(__dirname, "..");
 const CANONICAL_HOST = "dontpastetheai.com";
 const OLD_HOST = "dontquotetheai.com";
 const OLD_FILENAMES = ["ptbr.html", "zhtw.html"];
-const STANDALONE_PAGES = new Set(["student.html", "student/fr.html"]);
 
 // findings: Map<file, { errors: string[], warnings: string[] }>
 const findings = new Map();
@@ -65,20 +64,30 @@ function imageMissing(file, label, ref, code) {
 // --- Load translations.json ---
 const translations = JSON.parse(read("assets/translations.json"));
 const languages = translations.languages;
+// Standalone sections (currently just student/) register their own language
+// list under pages.<name>, so the set of expected files comes from the JSON.
+const sections = translations.pages ?? {};
 
 // Quick lookup helpers
 const langByFile = new Map(languages.map((l) => [l.file, l]));
+
+// --- Check 0: alphabetical order by code ---
+const codes = languages.map((l) => l.code);
+const sorted = [...codes].sort();
+for (let i = 0; i < codes.length; i++) {
+  if (codes[i] !== sorted[i]) {
+    err(
+      "assets/translations.json",
+      `languages not sorted by code: "${codes[i]}" at index ${i}, expected "${sorted[i]}"`
+    );
+    break;
+  }
+}
 
 // --- Check 9: registered HTML files (no orphans) ---
 const rootHtml = readdirSync(REPO_ROOT).filter(
   (f) => f.endsWith(".html") && statSync(join(REPO_ROOT, f)).isFile()
 );
-const studentDir = join(REPO_ROOT, "student");
-const studentHtml = existsSync(studentDir)
-  ? readdirSync(studentDir).filter(
-      (f) => f.endsWith(".html") && statSync(join(studentDir, f)).isFile(),
-    )
-  : [];
 const angryDir = join(REPO_ROOT, "angry");
 const angryHtml = existsSync(angryDir)
   ? readdirSync(angryDir).filter(
@@ -88,13 +97,50 @@ const angryHtml = existsSync(angryDir)
 
 const registered = new Set(languages.map((l) => l.file));
 for (const f of rootHtml) {
-  if (!registered.has(f) && !STANDALONE_PAGES.has(f)) {
-    err(f, `Orphan: not registered in translations.json`);
-  }
+  if (!registered.has(f)) err(f, `Orphan: not registered in translations.json`);
 }
-for (const f of studentHtml) {
-  if (!STANDALONE_PAGES.has(`student/${f}`)) {
-    err(`student/${f}`, `Orphan: not registered as a standalone page`);
+for (const [name, entries] of Object.entries(sections)) {
+  const dir = join(REPO_ROOT, name);
+  if (!existsSync(dir)) continue;
+  const expected = new Set(entries.map((e) => e.file));
+  const found = readdirSync(dir).filter(
+    (f) => f.endsWith(".html") && statSync(join(dir, f)).isFile()
+  );
+  for (const f of found) {
+    if (!expected.has(f))
+      err(`${name}/${f}`, `Orphan: not registered under pages.${name}`);
+  }
+  // Same head checks the language pages get, so a broken canonical or a
+  // wrong <html lang> on a section page fails CI instead of shipping.
+  for (const entry of entries) {
+    const path = `${name}/${entry.file}`;
+    if (!existsSync(join(REPO_ROOT, path))) {
+      err(path, `Missing file referenced under pages.${name}`);
+      continue;
+    }
+    const html = read(path);
+    const url =
+      entry.file === "index.html"
+        ? `https://${CANONICAL_HOST}/${name}/`
+        : `https://${CANONICAL_HOST}/${name}/${entry.file.replace(/\.html$/, "")}`;
+    const lang = html.match(/<html[^>]*\blang\s*=\s*"([^"]+)"/i);
+    if (!lang) err(path, `Missing <html lang="..."> attribute`);
+    else if (lang[1].toLowerCase() !== entry.code.toLowerCase())
+      err(path, `<html lang="${lang[1]}"> expected "${entry.code}"`);
+    const canonical = html.match(
+      /<link[^>]*\brel\s*=\s*"canonical"[^>]*\bhref\s*=\s*"([^"]+)"/i
+    );
+    if (!canonical) err(path, `Missing <link rel="canonical">`);
+    else if (canonical[1] !== url)
+      err(path, `canonical href="${canonical[1]}" expected "${url}"`);
+    const ogUrl = html.match(
+      /<meta[^>]*\bproperty\s*=\s*"og:url"[^>]*\bcontent\s*=\s*"([^"]+)"/i
+    );
+    if (!ogUrl) err(path, `Missing <meta property="og:url">`);
+    else if (ogUrl[1] !== url)
+      err(path, `og:url content="${ogUrl[1]}" expected "${url}"`);
+    if (!html.includes(entry.label))
+      err(path, `<select data-lang-select> missing <option> with label "${entry.label}"`);
   }
 }
 for (const f of angryHtml) {

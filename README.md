@@ -33,6 +33,10 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 | Српски (`sr`) | ✅ [sr.html](sr.html) | ✅ [angry/sr.html](angry/sr.html) | ✅ | [@GoodbyePlanet] |
 | Srpski (lat.) (`sr-latn`) | ✅ [sr-latn.html](sr-latn.html) | ✅ [angry/sr-latn.html](angry/sr-latn.html) | ✅ | [@GoodbyePlanet] |
 | Deutsch (`de`) | ✅ [de.html](de.html) | ✅ [angry/de.html](angry/de.html) | ✅ | [@shimscho] |
+| Magyar (`hu`) | ✅ [hu.html](hu.html) | ✅ [angry/hu.html](angry/hu.html) | ✅ | [@gergpus] |
+| Bahasa Indonesia (`id`) | ✅ [id.html](id.html) | ✅ [angry/id.html](angry/id.html) | ✅ | [@Arceister] |
+| 한국어 (`ko`) | ✅ [ko.html](ko.html) | ✅ [angry/ko.html](angry/ko.html) | ✅ | [@kaq6822] |
+| فارسی (`fa`) | ✅ [fa.html](fa.html) | ✅ [angry/fa.html](angry/fa.html) | ✅ | [@am2mcu] |
 
 [@webknjaz]: https://github.com/sponsors/webknjaz
 [@alexeev-prog]: https://github.com/alexeev-prog
@@ -46,6 +50,10 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 [@erdemgezer]: https://github.com/erdemgezer
 [@GoodbyePlanet]: https://github.com/GoodbyePlanet
 [@shimscho]: https://github.com/shimscho
+[@gergpus]: https://github.com/gergpus
+[@Arceister]: https://github.com/Arceister
+[@kaq6822]: https://github.com/kaq6822
+[@am2mcu]: https://github.com/am2mcu
 
 Want to suggest a language? Open an issue or just send the PR (even a half-finished one). We can iterate. Huge thanks to everyone in the Maintainer column above who took the time to make this page work in their language.
 
