@@ -8,10 +8,15 @@
 //           data-copy-aria="Copy {domain} to clipboard"
 //           data-copied-text="copied!">dontpastetheai.com</button>
 //   The `{domain}` placeholder in data-copy-aria is replaced at runtime.
+//
+//   Pages that are not the site root add the path they want shared, so the
+//   button copies that page instead of the homepage:
+//           data-copy-path="/student/fr"
 (function () {
   const btn = document.getElementById("copyBtn");
   if (!btn) return;
-  const target = location.hostname.replace(/^www\./, "");
+  const host = location.hostname.replace(/^www\./, "");
+  const target = host + (btn.dataset.copyPath || "");
   const ariaTemplate = btn.dataset.copyAria || "Copy {domain} to clipboard";
   const copiedText = btn.dataset.copiedText || "copied!";
   btn.textContent = target;

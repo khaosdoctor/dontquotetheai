@@ -71,13 +71,16 @@ jobs:
       - name: Build OG images
         run: node scripts/build-og-images.mjs
 
+      - name: Sync sitemap, robots and og:locale
+        run: node scripts/sync-seo.mjs
+
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
-            git commit -m "chore: sync hreflang + og images [skip ci]"
+            git commit -m "chore: sync hreflang, og images and seo [skip ci]"
             git push
           else
             echo "No changes to commit."

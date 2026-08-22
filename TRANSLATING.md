@@ -170,7 +170,7 @@ Register it under `pages.student` in `assets/translations.json`, using the bare 
 { "code": "es", "label": "ES — Español", "file": "es.html" }
 ```
 
-Adding your language there also points the teacher button on your smooth page at your translation instead of the English one. Languages without a student page fall back to English, so nothing breaks if you skip it.
+Registering it is all you need to do. CI generates the hreflang block, the `og:locale` tag and the sitemap entry from that one JSON edit, and it also points the teacher button on your smooth page at your translation instead of the English one. Languages without a student page fall back to English, so nothing breaks if you skip it.
 
 ## Right-to-left languages
 

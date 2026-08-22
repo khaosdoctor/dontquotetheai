@@ -3,120 +3,140 @@
     {
       "code": "de",
       "hreflang": "de",
+      "locale": "de_DE",
       "label": "DE — Deutsch",
       "file": "de.html"
     },
     {
       "code": "en",
       "hreflang": "en",
+      "locale": "en_US",
       "label": "EN — English",
       "file": "index.html"
     },
     {
       "code": "es",
       "hreflang": "es",
+      "locale": "es_ES",
       "label": "ES — Español",
       "file": "es.html"
     },
     {
       "code": "fa",
       "hreflang": "fa",
+      "locale": "fa_IR",
       "label": "FA — فارسی",
       "file": "fa.html"
     },
     {
       "code": "fr",
       "hreflang": "fr",
+      "locale": "fr_FR",
       "label": "FR — Français",
       "file": "fr.html"
     },
     {
       "code": "hu",
       "hreflang": "hu",
+      "locale": "hu_HU",
       "label": "HU — Magyar",
       "file": "hu.html"
     },
     {
       "code": "id",
       "hreflang": "id",
+      "locale": "id_ID",
       "label": "ID — Bahasa Indonesia",
       "file": "id.html"
     },
     {
       "code": "it",
       "hreflang": "it",
+      "locale": "it_IT",
       "label": "IT — Italiano",
       "file": "it.html"
     },
     {
       "code": "ja",
       "hreflang": "ja",
+      "locale": "ja_JP",
       "label": "JA — 日本語",
       "file": "ja.html"
     },
     {
       "code": "ko",
       "hreflang": "ko",
+      "locale": "ko_KR",
       "label": "KO — 한국어",
       "file": "ko.html"
     },
     {
       "code": "ne",
       "hreflang": "ne",
+      "locale": "ne_NP",
       "label": "NE — नेपाली",
       "file": "ne.html"
     },
     {
       "code": "pl",
       "hreflang": "pl",
+      "locale": "pl_PL",
       "label": "PL — Polski",
       "file": "pl.html"
     },
     {
       "code": "pt-br",
       "hreflang": "pt-BR",
+      "locale": "pt_BR",
       "label": "PT — Português (BR)",
       "file": "pt-br.html"
     },
     {
       "code": "ru",
       "hreflang": "ru",
+      "locale": "ru_RU",
       "label": "RU — Русский",
       "file": "ru.html"
     },
     {
       "code": "sr",
       "hreflang": "sr",
+      "locale": "sr_RS",
       "label": "SR — Српски",
       "file": "sr.html"
     },
     {
       "code": "sr-latn",
       "hreflang": "sr-Latn",
+      "locale": "sr_RS",
       "label": "SR — Srpski (lat.)",
       "file": "sr-latn.html"
     },
     {
       "code": "tr",
       "hreflang": "tr",
+      "locale": "tr_TR",
       "label": "TR — Türkçe",
       "file": "tr.html"
     },
     {
       "code": "uk",
       "hreflang": "uk",
+      "locale": "uk_UA",
       "label": "UK — Українська",
       "file": "uk.html"
     },
     {
       "code": "zh-cn",
       "hreflang": "zh-CN",
+      "locale": "zh_CN",
       "label": "ZH — 简体中文",
       "file": "zh-cn.html"
     },
     {
       "code": "zh-tw",
       "hreflang": "zh-TW",
+      "locale": "zh_TW",
       "label": "ZH — 繁體中文 (台灣)",
       "file": "zh-tw.html"
     }
@@ -124,16 +144,144 @@
   "pages": {
     "student": [
       {
+        "code": "de",
+        "hreflang": "de",
+        "locale": "de_DE",
+        "label": "DE — Deutsch",
+        "file": "de.html"
+      },
+      {
         "code": "en",
         "hreflang": "en",
+        "locale": "en_US",
         "label": "EN — English",
         "file": "index.html"
       },
       {
+        "code": "es",
+        "hreflang": "es",
+        "locale": "es_ES",
+        "label": "ES — Español",
+        "file": "es.html"
+      },
+      {
+        "code": "fa",
+        "hreflang": "fa",
+        "locale": "fa_IR",
+        "label": "FA — فارسی",
+        "file": "fa.html"
+      },
+      {
         "code": "fr",
         "hreflang": "fr",
+        "locale": "fr_FR",
         "label": "FR — Français",
         "file": "fr.html"
+      },
+      {
+        "code": "hu",
+        "hreflang": "hu",
+        "locale": "hu_HU",
+        "label": "HU — Magyar",
+        "file": "hu.html"
+      },
+      {
+        "code": "id",
+        "hreflang": "id",
+        "locale": "id_ID",
+        "label": "ID — Bahasa Indonesia",
+        "file": "id.html"
+      },
+      {
+        "code": "it",
+        "hreflang": "it",
+        "locale": "it_IT",
+        "label": "IT — Italiano",
+        "file": "it.html"
+      },
+      {
+        "code": "ja",
+        "hreflang": "ja",
+        "locale": "ja_JP",
+        "label": "JA — 日本語",
+        "file": "ja.html"
+      },
+      {
+        "code": "ko",
+        "hreflang": "ko",
+        "locale": "ko_KR",
+        "label": "KO — 한국어",
+        "file": "ko.html"
+      },
+      {
+        "code": "ne",
+        "hreflang": "ne",
+        "locale": "ne_NP",
+        "label": "NE — नेपाली",
+        "file": "ne.html"
+      },
+      {
+        "code": "pl",
+        "hreflang": "pl",
+        "locale": "pl_PL",
+        "label": "PL — Polski",
+        "file": "pl.html"
+      },
+      {
+        "code": "pt-br",
+        "hreflang": "pt-BR",
+        "locale": "pt_BR",
+        "label": "PT — Português (BR)",
+        "file": "pt-br.html"
+      },
+      {
+        "code": "ru",
+        "hreflang": "ru",
+        "locale": "ru_RU",
+        "label": "RU — Русский",
+        "file": "ru.html"
+      },
+      {
+        "code": "sr",
+        "hreflang": "sr",
+        "locale": "sr_RS",
+        "label": "SR — Српски",
+        "file": "sr.html"
+      },
+      {
+        "code": "sr-latn",
+        "hreflang": "sr-Latn",
+        "locale": "sr_RS",
+        "label": "SR — Srpski (lat.)",
+        "file": "sr-latn.html"
+      },
+      {
+        "code": "tr",
+        "hreflang": "tr",
+        "locale": "tr_TR",
+        "label": "TR — Türkçe",
+        "file": "tr.html"
+      },
+      {
+        "code": "uk",
+        "hreflang": "uk",
+        "locale": "uk_UA",
+        "label": "UK — Українська",
+        "file": "uk.html"
+      },
+      {
+        "code": "zh-cn",
+        "hreflang": "zh-CN",
+        "locale": "zh_CN",
+        "label": "ZH — 简体中文",
+        "file": "zh-cn.html"
+      },
+      {
+        "code": "zh-tw",
+        "hreflang": "zh-TW",
+        "locale": "zh_TW",
+        "label": "ZH — 繁體中文 (台灣)",
+        "file": "zh-tw.html"
       }
     ]
   }
