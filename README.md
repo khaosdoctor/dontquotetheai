@@ -85,6 +85,8 @@ They cross-link to each other (red button on smooth → angry, green button on a
 /pt-br.html        → smooth PT-BR
 /angry/            → angry EN
 /angry/pt-br.html  → angry PT-BR
+/student/          → student EN
+/student/fr.html   → student FR
 ```
 
 CSS and assets are at the root (`/styles.css`, `/assets/`). Angry pages reference them with `../`.
@@ -98,7 +100,7 @@ The student page has its own language dropdown. Available student translations a
 
 | Language | Student page |
 |----------|--------------|
-| English (`en`) | ✅ [`/student`](student.html) |
+| English (`en`) | ✅ [`/student/`](student/index.html) |
 | Français (`fr`) | ✅ [`/student/fr`](student/fr.html) |
 
 
