@@ -20,7 +20,7 @@ const START_MARKER =
   "<!-- hreflang:start (managed by scripts/sync-hreflang.mjs — do not edit by hand) -->";
 const END_MARKER = "<!-- hreflang:end -->";
 
-function loadLanguages() {
+function loadData() {
   const raw = readFileSync(
     join(REPO_ROOT, "assets", "translations.json"),
     "utf8",
@@ -29,27 +29,27 @@ function loadLanguages() {
   if (!Array.isArray(data.languages) || data.languages.length === 0) {
     throw new Error("translations.json: missing or empty 'languages' array");
   }
-  return data.languages;
+  return data;
 }
 
-function urlFor(lang, variant) {
-  // variant: "smooth" | "angry"
-  const prefix = variant === "angry" ? "/angry/" : "/";
-  if (lang.code === "en") return `${HOST}${prefix}`;
+// prefix is the section's URL prefix: "/" for smooth, "/angry/", "/student/".
+// Each section's alternates only ever point inside that same section, so a
+// French reader on the student page gets sent to the French student page.
+function urlFor(lang, prefix) {
+  if (lang.file === "index.html") return `${HOST}${prefix}`;
   return `${HOST}${prefix}${lang.file}`;
 }
 
-function buildBlock(languages, variant, indent) {
+function buildBlock(languages, prefix, indent) {
   const lines = [`${indent}${START_MARKER}`];
   for (const lang of languages) {
     lines.push(
-      `${indent}<link rel="alternate" hreflang="${lang.hreflang}" href="${urlFor(lang, variant)}">`,
+      `${indent}<link rel="alternate" hreflang="${lang.hreflang ?? lang.code}" href="${urlFor(lang, prefix)}">`,
     );
   }
-  // x-default points to the English variant root
-  const xDefault = variant === "angry" ? `${HOST}/angry/` : `${HOST}/`;
+  // x-default points to the English page of this section
   lines.push(
-    `${indent}<link rel="alternate" hreflang="x-default" href="${xDefault}">`,
+    `${indent}<link rel="alternate" hreflang="x-default" href="${HOST}${prefix}">`,
   );
   lines.push(`${indent}${END_MARKER}`);
   return lines.join("\n");
@@ -145,13 +145,13 @@ function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function syncFile(filePath, languages, variant, check) {
+function syncFile(filePath, languages, prefix, check) {
   const original = readFileSync(filePath, "utf8");
   const existing = findExistingBlock(original);
   if (!existing) {
     return { changed: false, missing: true };
   }
-  const newBlock = buildBlock(languages, variant, existing.indent);
+  const newBlock = buildBlock(languages, prefix, existing.indent);
   // The existing.start is at the indent's start (since regex captured indent),
   // existing.end is just after last '>'. Replace [start, end) with newBlock.
   const before = original.slice(0, existing.start);
@@ -168,15 +168,32 @@ function syncFile(filePath, languages, variant, check) {
 
 function main() {
   const check = process.argv.includes("--check");
-  const languages = loadLanguages();
+  const data = loadData();
+  const languages = data.languages;
 
   const targets = [];
   for (const lang of languages) {
-    targets.push({ path: join(REPO_ROOT, lang.file), variant: "smooth" });
+    targets.push({
+      path: join(REPO_ROOT, lang.file),
+      list: languages,
+      prefix: "/",
+    });
     targets.push({
       path: join(REPO_ROOT, "angry", lang.file),
-      variant: "angry",
+      list: languages,
+      prefix: "/angry/",
     });
+  }
+  // Standalone sections (student/) carry their own language list under
+  // pages.<name>, so their alternates come from that list, not from languages.
+  for (const [name, entries] of Object.entries(data.pages ?? {})) {
+    for (const entry of entries) {
+      targets.push({
+        path: join(REPO_ROOT, name, entry.file),
+        list: entries,
+        prefix: `/${name}/`,
+      });
+    }
   }
 
   const changed = [];
@@ -184,7 +201,7 @@ function main() {
   for (const t of targets) {
     let res;
     try {
-      res = syncFile(t.path, languages, t.variant, check);
+      res = syncFile(t.path, t.list, t.prefix, check);
     } catch (err) {
       if (err.code === "ENOENT") {
         missing.push(t.path);

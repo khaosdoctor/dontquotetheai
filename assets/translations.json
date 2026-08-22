@@ -125,11 +125,13 @@
     "student": [
       {
         "code": "en",
+        "hreflang": "en",
         "label": "EN — English",
         "file": "index.html"
       },
       {
         "code": "fr",
+        "hreflang": "fr",
         "label": "FR — Français",
         "file": "fr.html"
       }

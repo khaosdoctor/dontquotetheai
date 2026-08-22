@@ -122,7 +122,7 @@ for (const [name, entries] of Object.entries(sections)) {
     const url =
       entry.file === "index.html"
         ? `https://${CANONICAL_HOST}/${name}/`
-        : `https://${CANONICAL_HOST}/${name}/${entry.file.replace(/\.html$/, "")}`;
+        : `https://${CANONICAL_HOST}/${name}/${entry.file}`;
     const lang = html.match(/<html[^>]*\blang\s*=\s*"([^"]+)"/i);
     if (!lang) err(path, `Missing <html lang="..."> attribute`);
     else if (lang[1].toLowerCase() !== entry.code.toLowerCase())
