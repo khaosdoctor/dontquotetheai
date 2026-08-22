@@ -1,15 +1,17 @@
 # Translating dontpastetheai
 
-Hi! Thanks for picking up a translation. This page works because someone took an afternoon to make it speak their language. Here's how to do that, with as little friction as possible.
+Hi! Thanks for picking up a translation. Here's how to do that.
 
-If you get stuck, open a PR anyway — even half-finished. We'll help you across the finish line.
+If you get stuck, open a PR anyway, even half-finished. We'll help you across the finish line.
 
 ## TL;DR
 
 1. Pick a [BCP 47 language code](https://en.wikipedia.org/wiki/IETF_language_tag), lowercase, hyphenated (e.g. `es`, `pt-br`, `zh-tw`).
 2. Copy `index.html` → `<code>.html` and `angry/index.html` → `angry/<code>.html`. Translate the visible text in both.
-3. Register your language in `assets/translations.json` — CI handles the hreflang links across all pages.
-4. Make an OG image SVG (CI renders the PNG for you). Then open a PR.
+3. Copy `student/index.html` → `<code>.html`, student pages have no angry versions. Translate that too
+4. Register your language in `assets/translations.json` and add your student page under `pages`. CI handles the hreflang links across all pages so you **DO NOT** need to add them manually on the `<head>`
+5. Make an OG image SVG, it will be converted to PNG once the CI run.
+6. Then open a PR.
 
 The [GitHub Action](.github/workflows/validate.yml) runs on your PR and tells you what's missing. You can run it locally first: `node scripts/check-translations.mjs`.
 
@@ -17,7 +19,7 @@ The [GitHub Action](.github/workflows/validate.yml) runs on your PR and tells yo
 
 ## Step by step
 
-Each language is one HTML file per version. You need to translate **both** smooth and angry — they're separate, with different tones, not one document.
+Each language is one HTML file per version. You need to translate **both** smooth and angry.
 
 ### 1. Pick a code
 
@@ -26,8 +28,6 @@ Use [BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag), lowercase, hyphen
 - Spanish → `es.html`
 - Brazilian Portuguese → `pt-br.html`
 - Traditional Chinese (Taiwan) → `zh-tw.html`
-
-Not `pt_BR`, not `ptBR`, not `ptbr` — `pt-br`.
 
 ### 2. Copy the files
 
@@ -49,11 +49,11 @@ In each of your two new files, translate:
 - `<html lang="...">` attribute (set it to your language)
 - Everything visible inside `<header>`, `<section>`, `<blockquote>`, `<ol>`, `.shout`, `.signature`, `.footer`
 - The language `<select>` `aria-label`
-- The cross-link button text (red `.cta-angry` on smooth, green `.cta-calm` on angry). Keep the `data-variant-toggle` attribute and the static `href` as-is — `assets/translations.js` rewrites the `href` at runtime to point at the matching counterpart file, so you only translate the visible label.
+- The cross-link button text (red `.cta-angry` on smooth, green `.cta-calm` on angry). Keep the `data-variant-toggle` attribute and the static `href` as-is.
 - `og:url` and `<link rel="canonical">` should point at your file:
   - smooth: `https://dontpastetheai.com/<code>.html`
   - angry: `https://dontpastetheai.com/angry/<code>.html`
-- The copy button — translate the two data attributes, not the visible text:
+- For the copy button you should translate the two data attributes, not the visible text:
 
   ```html
   <button id="copyBtn" type="button" class="url-tag-big"
@@ -61,7 +61,7 @@ In each of your two new files, translate:
       data-copied-text="copied!">dontpastetheai.com</button>
   ```
 
-  Translate `data-copy-aria` (keep the `{domain}` placeholder — `assets/copy.js` substitutes the actual hostname) and `data-copied-text` (the post-click feedback). The visible `dontpastetheai.com` text stays — JS rewrites it at runtime to whichever domain the visitor is on.
+  Translate `data-copy-aria` (keep the `{domain}` placeholder since `assets/copy.js` substitutes the actual hostname) and `data-copied-text`.
 
 - The no-JS fallback `<option>` inside `<select data-lang-select>` should match **your** language, e.g. for `es.html`:
 
@@ -75,13 +75,15 @@ In each of your two new files, translate:
 
 ### 4. Don't touch
 
+If you change any of these files, the PR will be automatically closed:
+
 - CSS classes, HTML structure, the `<select data-lang-select>` markup
 - Font links and OG image paths (just change the filename suffix)
-- The `data-variant-toggle` attribute on the smooth↔angry cross-link button — `assets/translations.js` derives its `href` from the current page name, so a stale `href` in the markup gets overwritten
+- The `data-variant-toggle` attribute on the smooth↔angry cross-link button
 - GitHub link, nohello/dontasktoask links, YouTube "mad" link
 - In angry files, the `../styles.css` and `../assets/` relative paths
-- `assets/copy.js` — it's shared by every page
-- The block between `<!-- hreflang:start -->` and `<!-- hreflang:end -->` markers in every HTML file (managed by CI — see step 6)
+- `assets/copy.js` because it is shared by every page
+- The block between `<!-- hreflang:start -->` and `<!-- hreflang:end -->` markers in every HTML file (managed by CI, see step 6. It will create a LOT of conflicts if you do)
 
 ### 5. Register the language in `assets/translations.json`
 
@@ -97,23 +99,15 @@ One entry, once:
 }
 ```
 
-`locale` is the `og:locale` value (`language_TERRITORY`). Keep the entries sorted by `code`, CI sorts them for you if you forget.
+`locale` is the `og:locale` value (`language_TERRITORY`).
 
 Same `file` value applies to both smooth (`/es.html`) and angry (`/angry/es.html`). The dropdown in every existing page picks it up automatically — no per-file `<option>` edits.
 
 ### 6. hreflang links
 
-Skip this — CI does it for you. Just make sure your entry in `assets/translations.json` is correct. The next push to main runs `scripts/sync-hreflang.mjs` and updates every HTML file's hreflang block automatically (the block between the `<!-- hreflang:start -->` and `<!-- hreflang:end -->` markers). The validation check on your PR will show you a preview of what changed.
+**DO NOT** change them. CI does it for you. Just make sure your entry in `assets/translations.json` is correct. The next push to main will run `scripts/sync-hreflang.mjs` and it will update every HTML file's hreflang block automatically (the block between the `<!-- hreflang:start -->` and `<!-- hreflang:end -->` markers). The validation check on your PR will show you a preview of what changed.
 
-These links stay static in the HTML (not JS-injected) so Bing, Yandex, and Baidu pick them up reliably — but you don't have to maintain them by hand.
-
-### 7. OG image
-
-Open a PR.
-
----
-
-## OG image (social card)
+## 7. OG image (social card)
 
 Each language needs its own card so Twitter/Slack/etc show the right preview.
 
@@ -125,15 +119,16 @@ You can ship one image for both versions, or two (`og-image-<code>.png` and `og-
 
 1. Copy `assets/og-image.svg` to `assets/og-image-<code>.svg`.
 2. Open it, find the three `<text>` elements ("Oops, you pasted / the AI without / reading it."), translate them. Keep the red `<tspan fill="#a82820">` (whatever your word for "AI" is) so the color stays. Try to balance line lengths or text overflows.
-3. Leave the `dontpastetheai.com` in the yellow tag alone — that's the domain.
-4. Render to PNG at exactly **1200×630**. You need `Special Elite` and `JetBrains Mono` installed locally (Google Fonts → `~/.local/share/fonts/` → `fc-cache -f`), then:
+3. Leave the `dontpastetheai.com` in the yellow tag alone 
+4. Render to PNG at exactly **1200×630**. You need `Special Elite` and `JetBrains Mono` installed locally (Google Fonts) or if your language has non Latin characters, you will need to have that installed to, then:
 
    ```bash
    rsvg-convert -w 1200 -h 630 assets/og-image-<code>.svg -o assets/og-image-<code>.png
    ```
 
    No `rsvg-convert`? Inkscape, ImageMagick, or any SVG→PNG tool works.
-5. Update `og:image` and `twitter:image` in your two HTML files to point at the PNG.
+
+6. Update `og:image` and `twitter:image` in your two HTML files to point at the PNG.
 
 If you can't render locally, just ship the SVG. The push-to-main workflow runs `rsvg-convert` via `scripts/build-og-images.mjs` and generates the PNG for you. Your PR's `Check OG image freshness` step will warn that the PNG is missing — that's expected; ignore it.
 
@@ -152,14 +147,14 @@ Not sure? Open a PR with your best guess and we'll iterate.
 
 ## Tone notes
 
-The two versions have different tones. Don't merge them.
+The two versions have different tones.
 
-- **Smooth** — friendly, work-safe, nohello.net-ish. Direct without being aggressive. Picture sending it to a coworker you respect and don't want to weird out. No swearing, no insults, just a clear ask. Check `pt-br.html` for how PT-BR pulls it off.
-- **Angry** — satire with actual feelings. Frustrated, opinionated, a bit rude on purpose. Don't smooth it into corporate-speak. If your language has real slang for "lazy AI paste behavior", use it. Goal: reader feels called out, not lectured. Look at `angry/pt-br.html` — it's how people actually talk in Portuguese, not textbook stuff.
+- **Smooth** — friendly, work-safe, nohello.net-ish. Direct without being aggressive. Picture sending it to a coworker you respect and don't want to weird out. No swearing, no insults, just a clear ask. Check `pt-br.html` for how PT-BR does it.
+- **Angry** — satire with actual feelings. Frustrated, opinionated, a bit rude on purpose. If your language has real slang for "lazy AI paste behavior", use it. Goal: reader feels called out, not lectured. Look at `angry/pt-br.html`
 
 ## Student page
 
-There is a third page at `/student/`, written from a teacher's perspective for students who submit AI-generated work they never read. Every language has one, but most were machine translated in bulk (see the table in the README), so replacing yours with a real human pass is very welcome.
+There is a third page at `/student/`, written from a teacher's perspective for students who submit AI-generated work they never read.
 
 It works like `angry/`, one directory with `index.html` for English and `<code>.html` for everything else:
 
@@ -173,19 +168,24 @@ Registered under `pages.student` in `assets/translations.json`, same shape as a 
 { "code": "es", "hreflang": "es", "locale": "es_ES", "label": "ES — Español", "file": "es.html" }
 ```
 
-That one entry is all the wiring you need. CI generates the hreflang block, the `og:locale` tag and the sitemap entry from it, and it points the teacher button on your smooth page at your translation instead of the English one.
+That's basically it! CI generates the hreflang block, the `og:locale` tag and the sitemap entry from it, and it points the teacher button on your smooth page at your translation instead of the English one.
 
-Two things specific to this page: set `data-copy-path="/student/<code>"` on the copy button so it shares your page rather than the homepage, and remember the assets are one directory up, so paths are `../styles.css` and `../assets/`.
+Two things specific to this page: 
+
+- set `data-copy-path="/student/<code>"` on the copy button so it shares your page rather than the homepage,
+- and remember the assets are one directory up, so paths are `../styles.css` and `../assets/`.
+
+Student pages share the **SAME OG IMAGE** so you don't need to create another one.
 
 ## Right-to-left languages
 
-Add `dir="rtl"` to the `<html>` tag. CSS doesn't have logical properties everywhere yet, so layout might look weird. Open the PR anyway — we'll fix it in review.
+Add `dir="rtl"` to the `<html>` tag. CSS doesn't have logical properties everywhere yet, so layout might look weird. Open the PR anyway
 
 ## The validation script
 
 The workflow has two phases:
 
-- **On PR:** `scripts/check-translations.mjs` runs and must pass. `scripts/sync-hreflang.mjs --check`, `scripts/sync-seo.mjs --check` and `scripts/build-og-images.mjs --check` also run, but only as informational status — drift there won't block your merge.
+- **On PR:** `scripts/check-translations.mjs` runs and must pass. `scripts/sync-hreflang.mjs --check`, `scripts/sync-seo.mjs --check` and `scripts/build-og-images.mjs --check` also run, but only as informational status
 - **On push to main:** the sync scripts run for real, commit the regenerated hreflang blocks, `og:locale` tags, `sitemap.xml`, `robots.txt` and any missing PNGs back with `[skip ci]`, which triggers Cloudflare to redeploy.
 
 `check-translations.mjs` checks:
@@ -205,9 +205,5 @@ node scripts/sync-hreflang.mjs
 node scripts/sync-seo.mjs
 node scripts/build-og-images.mjs   # needs rsvg-convert installed
 ```
-
-Don't try to remember everything in this doc — let the scripts catch what you forgot.
-
----
 
 That's it. If anything in this guide is wrong, outdated, or unclear, fixing the doc is also a great PR. Thanks for translating.
