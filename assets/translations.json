@@ -43,6 +43,13 @@
       "file": "hu.html"
     },
     {
+      "code": "hy",
+      "hreflang": "hy",
+      "locale": "hy_AM",
+      "label": "HY — Հայերեն",
+      "file": "hy.html"
+    },
+    {
       "code": "id",
       "hreflang": "id",
       "locale": "id_ID",
@@ -184,6 +191,13 @@
         "locale": "hu_HU",
         "label": "HU — Magyar",
         "file": "hu.html"
+      },
+      {
+        "code": "hy",
+        "hreflang": "hy",
+        "locale": "hy_AM",
+        "label": "HY — Հայերեն",
+        "file": "hy.html"
       },
       {
         "code": "id",
