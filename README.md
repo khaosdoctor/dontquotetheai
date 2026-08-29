@@ -38,6 +38,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 | 한국어 (`ko`) | ✅ [ko.html](ko.html) | ✅ [angry/ko.html](angry/ko.html) | ✅ | [@kaq6822] |
 | فارسی (`fa`) | ✅ [fa.html](fa.html) | ✅ [angry/fa.html](angry/fa.html) | ✅ | [@am2mcu] |
 | Հայերեն (`hy`) | ✅ [hy.html](hy.html) | ✅ [angry/hy.html](angry/hy.html) | ✅ | [@vvahans] |
+| Română (`ro`) | ✅ [ro.html](ro.html) | ✅ [angry/ro.html](angry/ro.html) | ✅ | [@dorneanu] |
 
 [@webknjaz]: https://github.com/sponsors/webknjaz
 [@alexeev-prog]: https://github.com/alexeev-prog
@@ -55,6 +56,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 [@Arceister]: https://github.com/Arceister
 [@kaq6822]: https://github.com/kaq6822
 [@am2mcu]: https://github.com/am2mcu
+[@dorneanu]: https://github.com/dorneanu
 [@ymaldor1]: https://github.com/ymaldor1
 [@vvahans]: https://github.com/vvahans
 
@@ -80,6 +82,7 @@ A teacher-facing page at `/student/` for students who hand in AI-generated work 
 | नेपाली (`ne`) | ✅ [`/student/ne`](student/ne.html) | Machine Translated |
 | Polski (`pl`) | ✅ [`/student/pl`](student/pl.html) | Machine Translated |
 | Português (BR) (`pt-br`) | ✅ [`/student/pt-br`](student/pt-br.html) | Machine Translated |
+| Română (`ro`) | ✅ [`/student/ro`](student/ro.html) | [@dorneanu] |
 | Русский (`ru`) | ✅ [`/student/ru`](student/ru.html) | Machine Translated |
 | Српски (`sr`) | ✅ [`/student/sr`](student/sr.html) | Machine Translated |
 | Srpski (lat.) (`sr-latn`) | ✅ [`/student/sr-latn`](student/sr-latn.html) | Machine Translated |

@@ -99,6 +99,13 @@
       "file": "pt-br.html"
     },
     {
+      "code": "ro",
+      "hreflang": "ro",
+      "locale": "ro_RO",
+      "label": "RO — Română",
+      "file": "ro.html"
+    },
+    {
       "code": "ru",
       "hreflang": "ru",
       "locale": "ru_RU",
@@ -247,6 +254,13 @@
         "locale": "pt_BR",
         "label": "PT — Português (BR)",
         "file": "pt-br.html"
+      },
+      {
+        "code": "ro",
+        "hreflang": "ro",
+        "locale": "ro_RO",
+        "label": "RO — Română",
+        "file": "ro.html"
       },
       {
         "code": "ru",
