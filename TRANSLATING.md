@@ -104,7 +104,7 @@ If you change any of these files, the PR will be automatically closed:
 
 ### 5. Register the language 
 
-Add this to the `assets/translations.json`:
+Add an entry to the `languages` array in `assets/translations.json`:
 
 ```json
 {
@@ -116,9 +116,13 @@ Add this to the `assets/translations.json`:
 }
 ```
 
-`locale` is the `og:locale` value (`language_TERRITORY`).
+Field reference:
 
-Same `file` value applies to both smooth (`/es.html`) and angry (`/angry/es.html`).
+- **`code`** -- BCP 47 language tag, **all lowercase**, hyphenated. This is your internal key and filename stem. Examples: `es`, `pt-br`, `zh-tw`, `sr-latn`.
+- **`hreflang`** -- BCP 47 tag with **proper casing**: region subtags uppercase, script subtags title-case. For simple codes this matches `code`; for regional/script variants it differs. Examples: `es`, `pt-BR`, `zh-TW`, `sr-Latn`.
+- **`locale`** -- The `og:locale` value for Open Graph meta tags. Format is `language_TERRITORY` with an underscore separator and uppercase territory. Examples: `es_ES`, `pt_BR`, `zh_TW`, `sr_RS`.
+- **`label`** -- Shown in the language dropdown. Format: uppercase code + ` — ` + native language name. Examples: `ES — Español`, `PT — Português (BR)`, `ZH — 繁體中文 (台灣)`.
+- **`file`** -- The HTML filename. Matches `<code>.html` for every language except English (`index.html`). Same value applies to both smooth (`/es.html`) and angry (`/angry/es.html`).
 
 ### 6. hreflang links
 
@@ -151,7 +155,7 @@ It works like `angry/`, one directory with `index.html` for English and `<code>.
 student/index.html  →  student/<code>.html
 ```
 
-Registered under `pages.student` in `assets/translations.json`, same shape as a language entry but with the bare filename:
+Registered under `pages.student` in `assets/translations.json`, same shape and field rules as a language entry (see [step 5](#5-register-the-language-in-assetstranslationsjson) for what each field expects):
 
 ```json
 { "code": "es", "hreflang": "es", "locale": "es_ES", "label": "ES — Español", "file": "es.html" }
