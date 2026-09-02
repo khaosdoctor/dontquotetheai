@@ -36,6 +36,13 @@
       "file": "fr.html"
     },
     {
+      "code": "hi",
+      "hreflang": "hi",
+      "locale": "hi_IN",
+      "label": "HI — हिन्दी",
+      "file": "hi.html"
+    },
+    {
       "code": "hu",
       "hreflang": "hu",
       "locale": "hu_HU",
@@ -191,6 +198,13 @@
         "locale": "fr_FR",
         "label": "FR — Français",
         "file": "fr.html"
+      },
+      {
+        "code": "hi",
+        "hreflang": "hi",
+        "locale": "hi_IN",
+        "label": "HI — हिन्दी",
+        "file": "hi.html"
       },
       {
         "code": "hu",
