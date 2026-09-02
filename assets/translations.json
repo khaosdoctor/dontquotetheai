@@ -92,6 +92,13 @@
       "file": "ne.html"
     },
     {
+      "code": "pa",
+      "hreflang": "pa",
+      "locale": "pa_IN",
+      "label": "PA — ਪੰਜਾਬੀ",
+      "file": "pa.html"
+    },
+    {
       "code": "pl",
       "hreflang": "pl",
       "locale": "pl_PL",
@@ -254,6 +261,13 @@
         "locale": "ne_NP",
         "label": "NE — नेपाली",
         "file": "ne.html"
+      },
+      {
+        "code": "pa",
+        "hreflang": "pa",
+        "locale": "pa_IN",
+        "label": "PA — ਪੰਜਾਬੀ",
+        "file": "pa.html"
       },
       {
         "code": "pl",

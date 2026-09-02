@@ -41,6 +41,7 @@ jobs:
           curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-tc@latest/chinese-traditional-400-normal.ttf" -o ~/.local/share/fonts/noto-sans-tc.ttf || true
           curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-devanagari@latest/devanagari-400-normal.ttf" -o ~/.local/share/fonts/noto-sans-devanagari.ttf || true
           curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/noto-serif-armenian@latest/armenian-400-normal.ttf" -o ~/.local/share/fonts/noto-serif-armenian.ttf || true
+          curl -fsSL "https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-gurmukhi@latest/gurmukhi-400-normal.ttf" -o ~/.local/share/fonts/noto-sans-gurmukhi.ttf || true
           fc-cache -f
 
       - name: Sort translations.json alphabetically
