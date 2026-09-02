@@ -36,6 +36,13 @@
       "file": "fr.html"
     },
     {
+      "code": "hi",
+      "hreflang": "hi",
+      "locale": "hi_IN",
+      "label": "HI — हिन्दी",
+      "file": "hi.html"
+    },
+    {
       "code": "hu",
       "hreflang": "hu",
       "locale": "hu_HU",
@@ -83,6 +90,13 @@
       "locale": "ne_NP",
       "label": "NE — नेपाली",
       "file": "ne.html"
+    },
+    {
+      "code": "pa",
+      "hreflang": "pa",
+      "locale": "pa_IN",
+      "label": "PA — ਪੰਜਾਬੀ",
+      "file": "pa.html"
     },
     {
       "code": "pl",
@@ -193,6 +207,13 @@
         "file": "fr.html"
       },
       {
+        "code": "hi",
+        "hreflang": "hi",
+        "locale": "hi_IN",
+        "label": "HI — हिन्दी",
+        "file": "hi.html"
+      },
+      {
         "code": "hu",
         "hreflang": "hu",
         "locale": "hu_HU",
@@ -240,6 +261,13 @@
         "locale": "ne_NP",
         "label": "NE — नेपाली",
         "file": "ne.html"
+      },
+      {
+        "code": "pa",
+        "hreflang": "pa",
+        "locale": "pa_IN",
+        "label": "PA — ਪੰਜਾਬੀ",
+        "file": "pa.html"
       },
       {
         "code": "pl",
