@@ -22,6 +22,13 @@
       "file": "es.html"
     },
     {
+      "code": "et",
+      "hreflang": "et",
+      "locale": "et_EE",
+      "label": "ET — Eesti",
+      "file": "et.html"
+    },
+    {
       "code": "fa",
       "hreflang": "fa",
       "locale": "fa_IR",
@@ -177,6 +184,13 @@
         "locale": "es_ES",
         "label": "ES — Español",
         "file": "es.html"
+      },
+      {
+        "code": "et",
+        "hreflang": "et",
+        "locale": "et_EE",
+        "label": "ET — Eesti",
+        "file": "et.html"
       },
       {
         "code": "fa",
