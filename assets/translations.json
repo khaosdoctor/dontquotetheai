@@ -127,6 +127,13 @@
       "file": "sr-latn.html"
     },
     {
+      "code": "tk",
+      "hreflang": "tk",
+      "locale": "tk_TM",
+      "label": "TK — Türkmençe",
+      "file": "tk.html"
+    },
+    {
       "code": "tr",
       "hreflang": "tr",
       "locale": "tr_TR",
@@ -282,6 +289,13 @@
         "locale": "sr_RS",
         "label": "SR — Srpski (lat.)",
         "file": "sr-latn.html"
+      },
+      {
+        "code": "tk",
+        "hreflang": "tk",
+        "locale": "tk_TM",
+        "label": "TK — Türkmençe",
+        "file": "tk.html"
       },
       {
         "code": "tr",
