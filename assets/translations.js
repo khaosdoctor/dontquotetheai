@@ -18,11 +18,15 @@
   // pathname's last segment may be missing the extension. Normalize so the
   // value matches the "file" entries in translations.json.
   const last = location.pathname.split("/").pop() || "";
-  const here = !last
+  const resolved = !last
     ? "index.html"
     : last.endsWith(".html")
       ? last
       : `${last}.html`;
+  // /en is an alias for the English page (see _redirects at the repo root).
+  // English is registered as index.html, so map it back or the dropdown has
+  // nothing to select and the teacher CTA can't find the current language.
+  const here = resolved === "en.html" ? "index.html" : resolved;
   const isAngry = location.pathname.includes("/angry/");
   const isStudent = document.documentElement.dataset.page === "student";
   // angry/ and student/ both live one directory below assets/.
