@@ -41,6 +41,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 | Română (`ro`) | ✅ [ro.html](ro.html) | ✅ [angry/ro.html](angry/ro.html) | ✅ | [@dorneanu] |
 | Eesti (`et`) | ✅ [et.html](et.html) | ✅ [angry/et.html](angry/et.html) | ✅ | [@jaxhend] |
 | Türkmençe (`tk`) | ✅ [tk.html](tk.html) | ✅ [angry/tk.html](angry/tk.html) | ✅ | [@msoltanov] |
+| العربية (`ar`) | ✅ [ar.html](ar.html) | ✅ [angry/ar.html](angry/ar.html) | ✅ | [@GouirahFarid] |
 
 [@webknjaz]: https://github.com/sponsors/webknjaz
 [@alexeev-prog]: https://github.com/alexeev-prog
@@ -63,6 +64,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 [@ymaldor1]: https://github.com/ymaldor1
 [@vvahans]: https://github.com/vvahans
 [@jaxhend]: https://github.com/jaxhend
+[@GouirahFarid]: https://github.com/GouirahFarid
 
 Want to suggest a language? Open an issue or just send the PR (even a half-finished one). We can iterate. Huge thanks to everyone in the Maintainer column above who took the time to make this page work in their language.
 
@@ -72,6 +74,7 @@ A teacher-facing page at `/student/` for students who hand in AI-generated work 
 
 | Language | Student page | Maintainer |
 |----------|--------------|-----------|
+| العربية (`ar`) | ✅ [`/student/ar`](student/ar.html) | [@GouirahFarid] |
 | Deutsch (`de`) | ✅ [`/student/de`](student/de.html) | Machine Translated |
 | English (`en`) | ✅ [`/student/`](student/index.html) | [@ymaldor1] |
 | Español (`es`) | ✅ [`/student/es`](student/es.html) | Machine Translated |

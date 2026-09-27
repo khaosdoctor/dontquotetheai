@@ -1,6 +1,13 @@
 {
   "languages": [
     {
+      "code": "ar",
+      "hreflang": "ar",
+      "locale": "ar_AR",
+      "label": "AR — العربية",
+      "file": "ar.html"
+    },
+    {
       "code": "de",
       "hreflang": "de",
       "locale": "de_DE",
@@ -185,6 +192,13 @@
   ],
   "pages": {
     "student": [
+      {
+        "code": "ar",
+        "hreflang": "ar",
+        "locale": "ar_AR",
+        "label": "AR — العربية",
+        "file": "ar.html"
+      },
       {
         "code": "de",
         "hreflang": "de",
