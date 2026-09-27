@@ -1,0 +1,10 @@
+# Serve the English page at /en without a redirect, so people whose browser
+# locale points elsewhere have a stable URL to share and come back to.
+# The 200 keeps the path as /en, and that is what stops assets/translations.js
+# from bouncing the visitor to their browser language. Only the smooth root
+# auto-switches language, so /angry/ and /student/ need no alias.
+#
+# The destination has to be / rather than /index.html: the asset router
+# normalises /index.html back to / and answers with a 307, which would land
+# the visitor on the very path that auto-switches.
+/en / 200
