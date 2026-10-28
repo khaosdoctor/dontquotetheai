@@ -38,6 +38,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 | 한국어 (`ko`) | ✅ [ko.html](ko.html) | ✅ [angry/ko.html](angry/ko.html) | ✅ | [@kaq6822] |
 | فارسی (`fa`) | ✅ [fa.html](fa.html) | ✅ [angry/fa.html](angry/fa.html) | ✅ | [@am2mcu] |
 | Հայերեն (`hy`) | ✅ [hy.html](hy.html) | ✅ [angry/hy.html](angry/hy.html) | ✅ | [@vvahans] |
+| தமிழ் (`ta`) | ✅ [ta.html](ta.html) | ✅ [angry/ta.html](angry/ta.html) | ✅ | [@yvnth] |
 | Română (`ro`) | ✅ [ro.html](ro.html) | ✅ [angry/ro.html](angry/ro.html) | ✅ | [@dorneanu] |
 | Eesti (`et`) | ✅ [et.html](et.html) | ✅ [angry/et.html](angry/et.html) | ✅ | [@jaxhend] |
 | Türkmençe (`tk`) | ✅ [tk.html](tk.html) | ✅ [angry/tk.html](angry/tk.html) | ✅ | [@msoltanov] |
@@ -63,6 +64,7 @@ Spiritual cousin of [nohello.net](https://nohello.net) and [dontasktoask.com](ht
 [@msoltanov]: https://github.com/msoltanov
 [@ymaldor1]: https://github.com/ymaldor1
 [@vvahans]: https://github.com/vvahans
+[@yvnth]: https://github.com/yvnth
 [@jaxhend]: https://github.com/jaxhend
 [@GouirahFarid]: https://github.com/GouirahFarid
 
@@ -83,6 +85,7 @@ A teacher-facing page at `/student/` for students who hand in AI-generated work 
 | Français (`fr`) | ✅ [`/student/fr`](student/fr.html) | [@ymaldor1] |
 | Magyar (`hu`) | ✅ [`/student/hu`](student/hu.html) | Machine Translated |
 | Հայերեն (`hy`) | ✅ [`/student/hy`](student/hy.html) | [@vvahans] |
+| தமிழ் (`ta`) | ✅ [`/student/ta`](student/ta.html) | [@yvnth] |
 | Bahasa Indonesia (`id`) | ✅ [`/student/id`](student/id.html) | Machine Translated |
 | Italiano (`it`) | ✅ [`/student/it`](student/it.html) | Machine Translated |
 | 日本語 (`ja`) | ✅ [`/student/ja`](student/ja.html) | Machine Translated |

@@ -155,6 +155,13 @@
       "file": "sr-latn.html"
     },
     {
+      "code": "ta",
+      "hreflang": "ta",
+      "locale": "ta_IN",
+      "label": "TA — தமிழ்",
+      "file": "ta.html"
+    },
+    {
       "code": "tk",
       "hreflang": "tk",
       "locale": "tk_TM",
@@ -345,6 +352,13 @@
         "locale": "sr_RS",
         "label": "SR — Srpski (lat.)",
         "file": "sr-latn.html"
+      },
+      {
+        "code": "ta",
+        "hreflang": "ta",
+        "locale": "ta_IN",
+        "label": "TA — தமிழ்",
+        "file": "ta.html"
       },
       {
         "code": "tk",
